@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useRef, useEffect, useState } from 'react'
 import { Select } from 'antd'
 import { useTranslation } from 'react-i18next'
 
@@ -8,14 +8,26 @@ import { MENU_ITEMS } from 'src/constants/layout'
 import * as S from './styled'
 
 function Header() {
+  const [isFixed, setIsFixed] = useState(true)
+  const headerRef = useRef(null)
   const { t, i18n } = useTranslation()
 
   const renderMenuItems = useMemo(() => {
     return MENU_ITEMS.map((item, index) => <S.MenuItem key={index}>{t(item.label)}</S.MenuItem>)
   }, [t])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsFixed(window.scrollY > headerRef.current.offsetHeight)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <S.HeaderWrapper>
+    <S.HeaderWrapper ref={headerRef} $isFixed={isFixed}>
       <S.HeaderContainer>
         <S.HeaderLogo>
           <T.Title level={3}>T ❤️ N</T.Title>

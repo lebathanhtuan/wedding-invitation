@@ -4,7 +4,6 @@ const typographyStyle = css`
   margin: ${({ margin }) => margin || 0};
   padding: ${({ padding }) => padding || 0};
   color: ${({ color, theme }) => (color ? theme.colors[color] : theme.colors.dark2)};
-  font-family: Arial, Helvetica, sans-serif;
   white-space: pre-line;
   word-break: break-word;
 
@@ -17,12 +16,6 @@ const typographyStyle = css`
     `}
 
   ${({ truncateMultiLine, theme }) => truncateMultiLine && theme.truncateMultipleLine(truncateMultiLine)}
-    
-  ${({ lang }) =>
-    lang &&
-    css`
-      font-family: '${({ theme }) => theme.fontFamily[lang]}', sans-serif;
-    `}
 
   ${({ align }) =>
     align &&
