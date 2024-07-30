@@ -7,3 +7,9 @@ export const EngagementWrapper = styled.div`
   padding: 24px 0;
   background-color: blue;
 `
+export const EngagementInner = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
