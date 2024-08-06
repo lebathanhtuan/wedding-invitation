@@ -5,5 +5,11 @@ export const GalleryWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 24px 0;
-  background-color: cyan;
+`
+
+export const TabWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
 `

@@ -54,8 +54,8 @@ export const MenuItem = styled.a`
     position: absolute;
     bottom: -1px;
     left: 0;
-    margin: 0 4px;
-    width: calc(100% - 8px);
+    margin: 0 10%;
+    width: 80%;
     height: 0.1rem;
     border-radius: 999px;
     background-color: ${({ theme }) => theme.colors.secondary};

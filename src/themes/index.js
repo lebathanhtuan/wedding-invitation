@@ -11,8 +11,8 @@ const colors = {
   light: '#fff',
   dark1: '#2e2e2e',
   dark2: '#414141',
-  primary: '#ffadd2',
-  secondary: '#b9d6f3',
+  primary: '#dba191',
+  secondary: '#9bd4df',
   primaryGradient: 'linear-gradient(180deg, #FFCC21 0%, #FF963C 100%)',
   gray1: '#777777',
   gray2: '#2e2e2e',
@@ -25,6 +25,7 @@ const fontSizes = {
   lg: '16px',
   xl: '20px',
   xxl: '24px',
+  xxxl: '32px',
 }
 
 const fontWeights = {
