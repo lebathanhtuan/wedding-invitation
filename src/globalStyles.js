@@ -66,6 +66,10 @@ const GlobalStyle = createGlobalStyle`
       text-decoration: none;
     }
   }
+
+  .ant-modal-mask {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+  }
 `
 
 export default GlobalStyle

@@ -1,3 +1,5 @@
+import { Row, Col, Flex } from 'antd'
+
 import Container from 'src/components/Container'
 
 import * as S from './styled'
@@ -8,65 +10,54 @@ function Event() {
   return (
     <S.EventWrapper>
       <Container>
-          <T.Title>Sự kiện</T.Title>
-          <S.EventInner>
+        <Flex align="center" justify="center" vertical style={{ marginBottom: 24 }}>
+          <T.Title level={2}>Sự Kiện Cưới</T.Title>
+        </Flex>
+        <Row gutter={[24, 24]}>
+          <Col span={12}>
             <S.EventLeft>
-              <S.EventLeftImg src="https://placehold.co/1200x1500" alt=""/>
+              <img src="https://placehold.co/600x450" alt="" />
             </S.EventLeft>
-            <S.EventList>
-              <S.EventItem>
-                <T.Title level={3}>LỄ VU QUY</T.Title>
-                <S.EventInfo>
-                  <S.EventInfoLeft>
-                    <S.EventInfoImg src="https://placehold.co/1200x1500" alt=""/>
-                  </S.EventInfoLeft>
-                  <S.EventInfoRight>
-                    <S.EventCalendar>
-                      <S.EventCalendarTxt>08-09-2024</S.EventCalendarTxt>
-                      <S.EventCalendarTxt>7:00</S.EventCalendarTxt>
-                    </S.EventCalendar>
-                    <S.EventAddress>47 DH1, thôn Châu Lâu, tx Điện Bàn, Quảng Nam</S.EventAddress>
-                    <S.EventMap href="#">Xem bản đồ</S.EventMap>
-                  </S.EventInfoRight>
-                </S.EventInfo>
-              </S.EventItem>
-              <S.EventItem>
-                <T.Title level={3}>LỄ THÀNH HÔN</T.Title>
-                <S.EventInfo>
-                  <S.EventInfoLeft>
-                    <S.EventInfoImg src="https://placehold.co/1200x1500" alt=""/>
-                  </S.EventInfoLeft>
-                  <S.EventInfoRight>
-                    <S.EventCalendar>
-                      <S.EventCalendarTxt>08-09-2024</S.EventCalendarTxt>
-                      <S.EventCalendarTxt>9:00</S.EventCalendarTxt>
-                    </S.EventCalendar>
-                    <S.EventAddress>34 Cao Xuân Dục, phường Thuận Phước, quận Hải Châu, Đà Nẵng</S.EventAddress>
-                    <S.EventMap href="#">Xem bản đồ</S.EventMap>
-                  </S.EventInfoRight>
-                </S.EventInfo>
-              </S.EventItem>
-              <S.EventItem>
-                <T.Title level={3}>TIỆC CƯỚI</T.Title>
-                <S.EventInfo>
-                  <S.EventInfoLeft>
-                    <S.EventInfoImg src="https://placehold.co/1200x1500" alt=""/>
-                  </S.EventInfoLeft>
-                  <S.EventInfoRight>
-                    <S.EventCalendar>
-                      <S.EventCalendarTxt>08-09-2024</S.EventCalendarTxt>
-                      <S.EventCalendarTxt>11:00</S.EventCalendarTxt>
-                    </S.EventCalendar>
-                    <S.EventAddress>306, đường 2/9, Đà Nẵng</S.EventAddress>
-                    <S.EventMap href="#">Xem bản đồ</S.EventMap>
-                  </S.EventInfoRight>
-                </S.EventInfo>
-              </S.EventItem>
-            </S.EventList>
-          </S.EventInner>
+          </Col>
+          <Col span={12}>
+            <S.EventCard>
+              <S.EventImage src="https://placehold.co/1200x1200" alt="" />
+              <S.EventContent>
+                <T.Title level={3}>Lễ Vu Quy</T.Title>
+                <T.Text>08/09/2024</T.Text>
+                <T.Text>7h00 - 8h00</T.Text>
+                <T.Text>Tư gia nhà gái</T.Text>
+                <T.Text>Thôn Châu Lâu, Điện Bàn, Quảng Nam</T.Text>
+              </S.EventContent>
+            </S.EventCard>
+            <S.EventCard>
+              <S.EventImage src="https://placehold.co/1200x1200" alt="" />
+              <S.EventContent>
+                <T.Title level={3}>Lễ Thành Hôn</T.Title>
+                <T.Text>08/09/2024</T.Text>
+                <T.Text>9h00 - 10h00</T.Text>
+                <T.Text>Tư gia nhà gái</T.Text>
+                <T.Text>Thôn Châu Lâu, Điện Bàn, Quảng Nam</T.Text>
+              </S.EventContent>
+            </S.EventCard>
+            <S.EventCard>
+              <S.EventImage src="https://placehold.co/1200x1200" alt="" />
+              <S.EventContent>
+                <T.Title level={3}>Tiệc Cưới</T.Title>
+                <T.Text>08/09/2024</T.Text>
+                <T.Text>Đón khách: 11h00 - Khai tiệc: 14h00</T.Text>
+                <T.Text>Minh Toàn Galaxy</T.Text>
+                <T.Text align="center">
+                  Tầng 3, sảnh Eros
+                  <br />
+                  306, Đường 2/9, Hải Châu, Đà Nẵng
+                </T.Text>
+              </S.EventContent>
+            </S.EventCard>
+          </Col>
+        </Row>
       </Container>
     </S.EventWrapper>
-
   )
 }
 

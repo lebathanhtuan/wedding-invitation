@@ -13,6 +13,13 @@ export const OverviewWrapper = styled.div`
   background-size: cover;
 `
 
+export const OverviewContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+`
+
 export const OverviewLeftContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -118,16 +125,21 @@ export const CountdownContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 30px;
 `
 
 export const CountdownItem = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: white;
-  border: 3px solid red;
+
+  & > h3 {
+    font-size: 60px;
+  }
+
+  & > p {
+    position: relative;
+    top: -20px;
+  }
 `

@@ -4,6 +4,9 @@ export const ja = {
       overview: '概要',
       couple: 'カップル',
       loveStory: 'ラブストーリー',
+      engagement: 'エンゲージメント',
+      event: 'イベント',
+      photo: '写真',
     },
   },
 }

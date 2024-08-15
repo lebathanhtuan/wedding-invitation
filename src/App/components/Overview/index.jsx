@@ -1,3 +1,4 @@
+import { useState, useMemo } from 'react'
 import { Statistic } from 'antd'
 import moment from 'moment'
 
@@ -15,10 +16,56 @@ import flowerBackgroundImage from 'src/assets/images/FlowerBackground.png'
 import * as S from './styled'
 
 function Overview() {
+  const [countdownTime, setCountdownTime] = useState(0)
+
+  const renderCountdown = useMemo(() => {
+    const vietnamTimezoneOffset = 7 * 60 * 60 * 1000
+    const oneHourTime = 60 * 60 * 1000
+    const [days, hours, minutes, seconds] = moment(countdownTime - vietnamTimezoneOffset - oneHourTime)
+      .format('D-H-m-s')
+      .split('-')
+    return (
+      <S.CountdownContainer>
+        <S.CountdownItem>
+          <T.Title level={3} weight="regular">
+            {days}
+          </T.Title>
+          <T.Text weight="light" size="lg">
+            Ngày
+          </T.Text>
+        </S.CountdownItem>
+        <S.CountdownItem>
+          <T.Title level={3} weight="regular">
+            {hours}
+          </T.Title>
+          <T.Text weight="light" size="lg">
+            Giờ
+          </T.Text>
+        </S.CountdownItem>
+        <S.CountdownItem>
+          <T.Title level={3} weight="regular">
+            {minutes}
+          </T.Title>
+          <T.Text weight="light" size="lg">
+            Phút
+          </T.Text>
+        </S.CountdownItem>
+        <S.CountdownItem>
+          <T.Title level={3} weight="regular">
+            {seconds}
+          </T.Title>
+          <T.Text weight="light" size="lg">
+            Giây
+          </T.Text>
+        </S.CountdownItem>
+      </S.CountdownContainer>
+    )
+  }, [countdownTime])
+
   return (
     <S.OverviewWrapper $background={overviewBackgroundImage}>
       <Container>
-        <S.CountdownContainer>
+        <S.OverviewContainer>
           <S.OverviewLeftContent>
             <T.Title level={1} weight="regular">
               Save the Date
@@ -27,7 +74,12 @@ function Overview() {
               Thanh Tuấn & Bích Ni
             </T.Title>
             <T.Title level={3} weight="regular">
-              <Statistic.Countdown value={moment(WEDDING_DAY).valueOf()} format="DD:HH:mm:ss" />
+              {renderCountdown}
+              <Statistic.Countdown
+                value={moment(WEDDING_DAY).valueOf()}
+                onChange={(value) => setCountdownTime(value)}
+                style={{ display: 'none' }}
+              />
             </T.Title>
           </S.OverviewLeftContent>
           <S.OverviewRightContent>
@@ -39,7 +91,7 @@ function Overview() {
               <S.HeartImage src={heartImage} alt="" />
             </S.ImageContainer>
           </S.OverviewRightContent>
-        </S.CountdownContainer>
+        </S.OverviewContainer>
       </Container>
     </S.OverviewWrapper>
   )

@@ -4,7 +4,6 @@ import Footer from 'src/layouts/Footer'
 import Overview from './components/Overview'
 import Invitation from './components/Invitation'
 import Couple from './components/Couple'
-import Term from './components/Term'
 import LoveStory from './components/LoveStory'
 import Engagement from './components/Engagement'
 import Event from './components/Event'
@@ -24,7 +23,6 @@ function App() {
         <Overview />
         <Invitation />
         <Couple />
-        <Term />
         <LoveStory />
         <Engagement />
         <Event />

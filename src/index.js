@@ -4,6 +4,8 @@ import { ConfigProvider } from 'antd'
 import { ThemeProvider } from 'styled-components'
 
 import GlobalStyle from 'src/globalStyles'
+import 'react-photo-album/styles.css'
+import 'yet-another-react-lightbox/styles.css'
 
 import App from './App'
 import theme from './themes'

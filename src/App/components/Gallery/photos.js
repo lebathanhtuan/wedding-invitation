@@ -7,7 +7,7 @@ function assetLink(asset, width) {
 }
 //https://assets.react-photo-album.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage04.9a1f6335.jpg&w=3840&q=75
 
-const photos = [
+export const WEDDING_PHOTOS = [
   {
     asset: 'image01.018d1d35.jpg',
     width: 1080,
@@ -146,4 +146,75 @@ const photos = [
   })),
 }))
 
-export default photos
+export const MEMORY_PHOTOS = [
+  {
+    asset: 'image07.ac608196.jpg',
+    width: 1080,
+    height: 608,
+    alt: 'A pine tree forest near a mountain at sunset',
+  },
+  {
+    asset: 'image08.95e095b5.jpg',
+    width: 1080,
+    height: 720,
+    alt: 'Silhouette photo of three hikers near tall trees',
+  },
+  {
+    asset: 'image09.fa6c4764.jpg',
+    width: 1080,
+    height: 1549,
+    alt: 'A person sitting near a bonfire surrounded by trees',
+  },
+  {
+    asset: 'image10.411ea655.jpg',
+    width: 1080,
+    height: 720,
+    alt: 'Green moss on gray rocks in a river',
+  },
+  {
+    asset: 'image11.f3ea483a.jpg',
+    width: 1080,
+    height: 694,
+    alt: 'Landscape photography of mountains',
+  },
+  {
+    asset: 'image12.5a9347ea.jpg',
+    width: 1080,
+    height: 1620,
+    alt: 'A pathway between green trees during daytime',
+  },
+  {
+    asset: 'image13.ce46dd98.jpg',
+    width: 1080,
+    height: 720,
+    alt: 'A man wearing a black jacket and backpack standing on a grass field during sunset',
+  },
+  {
+    asset: 'image14.68b2812c.jpg',
+    width: 1080,
+    height: 1440,
+    alt: 'Green pine trees under white clouds during the daytime',
+  },
+  {
+    asset: 'image15.4461facf.jpg',
+    width: 1080,
+    height: 1620,
+    alt: 'A hiker sitting near the cliff',
+  },
+  {
+    asset: 'image16.5ad17d8b.jpg',
+    width: 1080,
+    height: 810,
+    alt: 'A tall mountain with a waterfall running down its side',
+  },
+].map(({ asset, alt, width, height }) => ({
+  src: assetLink(asset, width),
+  alt,
+  width,
+  height,
+  srcSet: breakpoints.map((breakpoint) => ({
+    src: assetLink(asset, breakpoint),
+    width: breakpoint,
+    height: Math.round((height / width) * breakpoint),
+  })),
+}))
