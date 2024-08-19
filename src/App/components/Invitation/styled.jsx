@@ -6,6 +6,14 @@ export const InvitationWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 24px 0;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 0;
+
+    & > div {
+      padding: 0;
+    }
+  }
 `
 
 export const ImageContent = styled.img`
@@ -24,6 +32,19 @@ export const ImageLabel = styled(T.Text)`
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   z-index: 2;
+
+
+  @media screen and (max-width: 768px) {
+    font-size: 150px;
+    bottom: -50px;
+    right: -8px;
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: 100px;
+    bottom: -65px;
+    right: -5px;
+  }
 `
 
 export const ImageWrapper = styled.div`

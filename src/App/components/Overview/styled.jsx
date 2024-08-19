@@ -18,6 +18,10 @@ export const OverviewContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 24px;
+
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+  }
 `
 
 export const OverviewLeftContent = styled.div`
@@ -26,6 +30,12 @@ export const OverviewLeftContent = styled.div`
   justify-content: center;
   align-items: center;
   width: 45%;
+  order: 1;
+
+  @media screen and (max-width: 992px) {
+    width: 100%;
+    order: 2;
+  }
 `
 
 export const OverviewRightContent = styled.div`
@@ -34,6 +44,13 @@ export const OverviewRightContent = styled.div`
   justify-content: center;
   align-items: center;
   width: 55%;
+  order: 2;
+
+  @media screen and (max-width: 992px) {
+    width: 100%;
+    max-width: 500px;
+    order: 1;
+  }
 `
 
 export const CardImage1 = styled.img`
@@ -141,5 +158,16 @@ export const CountdownItem = styled.div`
   & > p {
     position: relative;
     top: -20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    & > h3 {
+      font-size: 40px;
+    }
+
+    & > p {
+      position: relative;
+      top: -10px;
+    }
   }
 `

@@ -19,7 +19,7 @@ function Couple() {
           <S.TextImage src={coupleTextImage} alt="" />
         </Flex>
         <Row gutter={[16, 16]} align="middle">
-          <Col span={10}>
+          <Col lg={{ span: 10, order: 1 }} xs={{ span: 12, order: 2 }}>
             <Flex align="center" justify="center" vertical>
               <S.ImageWrapper>
                 <S.ImageContainer>
@@ -36,28 +36,40 @@ function Couple() {
               </T.Text>
             </Flex>
           </Col>
-          <Col span={4}>
-            <Flex align="center" justify="center" vertical style={{ marginBottom: 72 }}>
-              <T.Text size="xxl" color="light">
-                Nhà trai
-              </T.Text>
-              <T.Text size="lg" color="light" align="center">
-                Ông. Lê Bá Thanh
-                <br />
-                Bà. Châu Thị Xuân
-              </T.Text>
-              <S.MiddleImage src={coupleMiddleImage} alt="" />
-              <T.Text size="xxl" color="light">
-                Nhà Gái
-              </T.Text>
-              <T.Text size="lg" color="light" align="center">
-                Ông. Nguyễn Văn Hiệu
-                <br />
-                Bà. Phan Thị Bích Vân
-              </T.Text>
-            </Flex>
+          <Col lg={{ span: 4, order: 2 }} xs={{ span: 24, order: 1 }}>
+            <S.CoupleRow>
+              <Col lg={{ span: 24 }} xs={{ span: 10 }}>
+                <Flex align="center" justify="center" vertical>
+                  <T.Text size="xxl" color="light">
+                    Nhà trai
+                  </T.Text>
+                  <T.Text size="lg" color="light" align="center">
+                    Ông. Lê Bá Thanh
+                    <br />
+                    Bà. Châu Thị Xuân
+                  </T.Text>
+                </Flex>
+              </Col>
+              <Col lg={{ span: 24 }} xs={{ span: 4 }}>
+                <Flex align="center" justify="center" vertical>
+                  <S.MiddleImage src={coupleMiddleImage} alt="" />
+                </Flex>
+              </Col>
+              <Col lg={{ span: 24 }} xs={{ span: 10 }}>
+                <Flex align="center" justify="center" vertical>
+                  <T.Text size="xxl" color="light">
+                    Nhà Gái
+                  </T.Text>
+                  <T.Text size="lg" color="light" align="center">
+                    Ông. Nguyễn Văn Hiệu
+                    <br />
+                    Bà. Phan Thị Bích Vân
+                  </T.Text>
+                </Flex>
+              </Col>
+            </S.CoupleRow>
           </Col>
-          <Col span={10}>
+          <Col lg={{ span: 10, order: 3 }} xs={{ span: 12, order: 3 }}>
             <Flex align="center" justify="center" vertical>
               <S.ImageWrapper>
                 <S.ImageContainer>
