@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { Drawer } from 'antd'
 
 export const HeaderWrapper = styled.header`
   position: absolute;
@@ -31,7 +32,22 @@ export const HeaderContainer = styled.div`
   width: 100%;
 `
 
-export const HeaderLogo = styled.div``
+export const HeaderMenuIcon = styled.div`
+  display: none;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoint.lg}) {
+    display: block;
+  }
+`
+
+export const HeaderLogo = styled.div`
+  @media screen and (max-width: ${({ theme }) => theme.breakpoint.lg}) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`
 
 export const HeaderMenu = styled.div`
   position: absolute;
@@ -41,6 +57,10 @@ export const HeaderMenu = styled.div`
   align-items: center;
   gap: 24px;
   transform: translate(-50%, -50%);
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoint.lg}) {
+    display: none;
+  }
 `
 
 export const MenuItem = styled.a`
@@ -72,5 +92,13 @@ export const MenuItem = styled.a`
   &:hover::after,
   &:focus::after{
     transform: scale(1);
+  }
+`
+
+export const SidebarContainer = styled(Drawer)`
+  display: none;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoint.lg}) {
+    display: block;
   }
 `

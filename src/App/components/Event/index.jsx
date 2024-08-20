@@ -14,12 +14,12 @@ function Event() {
           <T.Title level={2}>Sự Kiện Cưới</T.Title>
         </Flex>
         <Row gutter={[24, 24]}>
-          <Col span={12}>
+          <Col md={{ span: 12 }} xs={{ span: 24 }}>
             <S.EventLeft>
               <img src="https://placehold.co/600x450" alt="" />
             </S.EventLeft>
           </Col>
-          <Col span={12}>
+          <Col md={{ span: 12 }} xs={{ span: 24 }}>
             <S.EventCard>
               <S.EventImage src="https://placehold.co/1200x1200" alt="" />
               <S.EventContent>

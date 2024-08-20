@@ -1,6 +1,7 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef } from 'react'
 import { Statistic } from 'antd'
 import moment from 'moment'
+import ReactPlayer from 'react-player'
 
 import Container from 'src/components/Container'
 import T from 'src/components/Typography'
@@ -12,10 +13,13 @@ import overviewCard2Image from 'src/assets/images/OverviewCard2.png'
 import overviewCard3Image from 'src/assets/images/OverviewCard3.png'
 import heartImage from 'src/assets/images/Heart.png'
 import flowerBackgroundImage from 'src/assets/images/FlowerBackground.png'
+import letterPlayImage from 'src/assets/images/LetterPlay.png'
+import moviePlayImage from 'src/assets/images/MoviePlay.png'
 
 import * as S from './styled'
 
 function Overview() {
+  const [isShowVideoModal, setIsShowVideoModal] = useState(true)
   const [countdownTime, setCountdownTime] = useState(0)
 
   const renderCountdown = useMemo(() => {
@@ -81,6 +85,11 @@ function Overview() {
                 style={{ display: 'none' }}
               />
             </T.Title>
+            <S.PlayButton onClick={() => setIsShowVideoModal(true)}>
+              <img src={letterPlayImage} className="letter" alt="" />
+              <img src={moviePlayImage} className="movie" alt="" />
+              <S.PlayNote>Click me</S.PlayNote>
+            </S.PlayButton>
           </S.OverviewLeftContent>
           <S.OverviewRightContent>
             <S.ImageContainer>
@@ -93,6 +102,20 @@ function Overview() {
           </S.OverviewRightContent>
         </S.OverviewContainer>
       </Container>
+      {isShowVideoModal && (
+        <S.VideoModal open centered footer={null} width={904} onCancel={() => setIsShowVideoModal(false)}>
+          <ReactPlayer
+            id="video-modal"
+            url="https://www.youtube.com/watch?v=kalKWUHbLkc"
+            playing
+            playsinline
+            controls
+            width="904px"
+            height="560px"
+            muted
+          />
+        </S.VideoModal>
+      )}
     </S.OverviewWrapper>
   )
 }

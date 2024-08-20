@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { Flex } from 'antd'
 import ReactPlayer from 'react-player'
 
@@ -10,13 +10,7 @@ import * as S from './styled'
 
 function Engagement() {
   const [isShowVideoModal, setIsShowVideoModal] = useState(false)
-  const videoRef = useRef(null)
 
-  useEffect(() => {
-    if (!isShowVideoModal) {
-      videoRef.current?.seekTo(0)
-    }
-  }, [isShowVideoModal])
   return (
     <S.EngagementWrapper>
       <S.VideoPlayButton onClick={() => setIsShowVideoModal(true)} />
@@ -26,13 +20,13 @@ function Engagement() {
             <S.EngagementContainer>
               <S.EngagementContent>
                 <Flex justify="center" align="center" vertical>
-                  <T.Title level={2} color="light">
+                  <T.Title level={2} color="light" align="center">
                     Cùng xem video Lễ Đính Hôn của chúng mình nhé!!!
                   </T.Title>
                   <T.Text color="light">
-                    Tình yêu không phải là những lời thề non hẹn biển
+                    Tình yêu không phải là những lời thề non hẹn biển,
                     <br />
-                    chỉ đơn giản là cùng nhau bình yên qua ngày.,
+                    chỉ đơn giản là cùng nhau bình yên qua ngày.
                   </T.Text>
                 </Flex>
               </S.EngagementContent>
@@ -40,23 +34,6 @@ function Engagement() {
           </Container>
         </S.EngagementInner>
       </S.EngagementBackground>
-      {/* <S.EngagementContainer>
-        <Container>
-          <Flex justify="center" align="center" vertical>
-            <T.Title level={2} color="light">
-              Xem video đính hôn của chúng mình nhé!!!
-            </T.Title>
-            <T.Text color="light">
-              Tình yêu không phải là những lời thề non hẹn biển
-              <br />
-              chỉ đơn giản là cùng nhau bình yên qua ngày.,
-            </T.Text>
-            <Button type="primary" onClick={() => setIsShowVideoModal(true)}>
-              Play
-            </Button>
-          </Flex>
-        </Container>
-      </S.EngagementContainer> */}
       {isShowVideoModal && (
         <S.VideoModal open centered footer={null} width={904} onCancel={() => setIsShowVideoModal(false)}>
           <ReactPlayer

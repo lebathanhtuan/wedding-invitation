@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Modal } from 'antd'
 
 export const OverviewWrapper = styled.div`
   display: flex;
@@ -11,6 +12,11 @@ export const OverviewWrapper = styled.div`
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
+
+  @media screen and (max-width: 992px) {
+    min-height: 840px;
+    max-height: 840px;
+  }
 `
 
 export const OverviewContainer = styled.div`
@@ -169,5 +175,144 @@ export const CountdownItem = styled.div`
       position: relative;
       top: -10px;
     }
+  }
+`
+
+export const PlayNote = styled.div`
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  transform: translate(-44%, 0);
+  padding: 2px 5px;
+  border-radius: 999px;
+  background-color: #b23e1a;
+  color: white;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+`
+
+export const PlayButton = styled.div`
+  position: relative;
+  margin-top: 24px;
+  width: 120px;
+  height: auto;
+  animation: zoom 2s infinite;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  & > .letter {
+    width: 100%;
+    height: auto;
+  }
+
+  & > .movie {
+    position: absolute;
+    top: 15%;
+    left: 37%;
+    width: 35%;
+    animation: sway 3.5s infinite;
+  }
+
+  &:hover {
+    animation: none;
+    transform: scale(1.15);
+
+    & ${PlayNote} {
+      opacity: 1;
+    }
+  }
+
+  @keyframes sway {
+    0% {
+      transform: rotate(0deg);
+    }
+    8% {
+      transform: rotate(0deg);
+    }
+    12% {
+      transform: rotate(28deg);
+    }
+    16% {
+      transform: rotate(-23deg);
+    }
+    20% {
+      transform: rotate(0deg);
+    }
+    23% {
+      transform: rotate(19deg);
+    }
+    26% {
+      transform: rotate(-14deg);
+    }
+    29% {
+      transform: rotate(0deg);
+    }
+    31% {
+      transform: rotate(11deg);
+    }
+    33% {
+      transform: rotate(-8deg);
+    }
+    35% {
+      transform: rotate(0deg);
+    }
+    37% {
+      transform: rotate(-4deg);
+    }
+    39% {
+      transform: rotate(0deg);
+    }
+    40% {
+      transform: rotate(4deg);
+    }
+    44% {
+      transform: rotate(-2deg);
+    }
+    49% {
+      transform: rotate(1.3deg);
+    }
+    55% {
+      transform: rotate(0deg);
+    }
+    62% {
+      transform: rotate(0.7deg);
+    }
+    70% {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes zoom {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+`
+
+export const VideoModal = styled(Modal)`
+  .ant-modal-close {
+    top: -36px;
+    right: 0;
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .ant-modal-content {
+    border-radius: 0;
+    padding: 1px;
+  }
+
+  .ant-modal-body {
+    overflow: hidden;
   }
 `

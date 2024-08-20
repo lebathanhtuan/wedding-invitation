@@ -12,7 +12,7 @@ function Intention() {
     <S.IntentionWrapper>
       <Container>
         <Row gutter={[16, 16]} align="middle">
-          <Col span={12}>
+          <Col md={12} xs={24}>
             <Flex align="center" justify="center" vertical>
               <T.Text align="center">
                 Thân mời bạn tham gia bữa tiệc <br /> đánh dấu ngày chúng mình về chung một nhà!
@@ -63,7 +63,7 @@ function Intention() {
               </S.GridContainer>
             </Flex>
           </Col>
-          <Col span={12}>
+          <Col md={12} xs={24}>
             <Flex align="center" justify="center" vertical>
               <T.Title>Just Married</T.Title>
               <S.PaintImage src={brideGroomPaintImage} />

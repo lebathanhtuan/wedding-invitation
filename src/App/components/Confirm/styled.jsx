@@ -4,7 +4,7 @@ export const ConfirmWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 32px 0;
+  padding: 32px 16px;
 `
 
 export const ConfirmContainer = styled.div`
@@ -31,6 +31,7 @@ export const LeftContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 24px;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -38,6 +39,10 @@ export const LeftContainer = styled.div`
   & img {
     width: 70%;
     height: auto;
+
+    @media screen and (max-width: 768px) {
+      width: 50%;
+    }
   }
 `
 

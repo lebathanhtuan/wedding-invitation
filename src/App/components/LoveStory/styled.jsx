@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Row, Col, Flex } from 'antd'
+import { Col } from 'antd'
 
 export const LoveStoryWrapper = styled.div`
   display: flex;
@@ -9,17 +9,28 @@ export const LoveStoryWrapper = styled.div`
 `
 
 export const LoveStoryCol = styled(Col)`
-  ${({ $right }) => $right && css`
-    text-align: right;
+  ${({ $right }) =>
+    $right &&
+    css`
+      text-align: right;
+    `}
 
-    @media screen and (max-width: 992px) {
-      text-align: center;
-    }
-  `}
+  ${({ $line }) =>
+    $line &&
+    css`
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    `}
 
-  ${({ $line }) => $line && css`
-    @media screen and (max-width: 992px) {
-      display: none;
-    }
-  `}
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
+`
+
+export const LoveStoryLine = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
 `

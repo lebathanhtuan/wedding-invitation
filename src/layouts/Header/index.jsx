@@ -1,6 +1,7 @@
 import { useMemo, useRef, useEffect, useState } from 'react'
-import { Select } from 'antd'
+import { Button, Select, Drawer } from 'antd'
 import { useTranslation } from 'react-i18next'
+import { MenuOutlined } from '@ant-design/icons'
 
 import T from 'src/components/Typography'
 import { MENU_ITEMS } from 'src/constants/layout'
@@ -9,6 +10,7 @@ import * as S from './styled'
 
 function Header() {
   const [isFixed, setIsFixed] = useState(true)
+  const [isShowSidebar, setIsShowSidebar] = useState(true)
   const headerRef = useRef(null)
   const { t, i18n } = useTranslation()
 
@@ -29,6 +31,9 @@ function Header() {
   return (
     <S.HeaderWrapper ref={headerRef} $isFixed={isFixed}>
       <S.HeaderContainer>
+        <S.HeaderMenuIcon>
+          <Button type="text" size="large" icon={<MenuOutlined />} onClick={() => setIsShowSidebar(true)} />
+        </S.HeaderMenuIcon>
         <S.HeaderLogo>
           <T.Title level={3}>T ❤️ N</T.Title>
         </S.HeaderLogo>
@@ -44,6 +49,9 @@ function Header() {
           <Select.Option value="ja">🇯🇵 Tiếng Nhật</Select.Option>
         </Select>
       </S.HeaderContainer>
+      <Drawer placement="left" open={isShowSidebar} closable={false} onClose={() => setIsShowSidebar(false)}>
+        Đây là menu
+      </Drawer>
     </S.HeaderWrapper>
   )
 }

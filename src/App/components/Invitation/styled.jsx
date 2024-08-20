@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import T from 'src/components/Typography'
 
 export const InvitationWrapper = styled.div`
@@ -11,7 +11,7 @@ export const InvitationWrapper = styled.div`
     padding-top: 0;
 
     & > div {
-      padding: 0;
+      padding: 0 2px;
     }
   }
 `
@@ -32,7 +32,6 @@ export const ImageLabel = styled(T.Text)`
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   z-index: 2;
-
 
   @media screen and (max-width: 768px) {
     font-size: 150px;

@@ -11,7 +11,7 @@ function Confirm() {
     <S.ConfirmWrapper>
       <S.ConfirmContainer>
         <Row>
-          <Col span={10}>
+          <Col md={10} xs={24}>
             <S.ConfirmLeft $background={confirmBackgroundImage}>
               <S.LeftContainer>
                 <img src={saveTheDateImage} alt="Save the date" />
@@ -22,7 +22,7 @@ function Confirm() {
               </S.LeftContainer>
             </S.ConfirmLeft>
           </Col>
-          <Col span={14}>
+          <Col md={14} xs={24}>
             <S.ConfirmRight>
               <Flex align="center" justify="center" vertical style={{ marginBottom: 16 }}>
                 <T.Title level={2}>Xác nhận tham dự</T.Title>
