@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Modal } from 'antd'
-import { PlayCircleOutlined } from '@ant-design/icons'
+import T from 'src/components/Typography'
 
 export const EngagementWrapper = styled.div`
   position: relative;
@@ -25,6 +25,10 @@ export const EngagementContainer = styled.div`
   @media screen and (max-width: 768px) {
     padding-top: 56.25%; /* 16:9 */
   }
+
+  @media screen and (max-width: 576px) {
+    padding-top: 75%; /* 4:3 */
+  }
 `
 
 export const EngagementContent = styled.div`
@@ -36,7 +40,42 @@ export const EngagementContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 100px;
+  padding: 10% 0;
+
+  @media screen and (max-width: 992px) {
+    padding: 6% 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 12% 0 10%;
+  }
+
+  @media screen and (max-width: 576px) {
+    padding: 18% 0 16%;
+
+    & h2 {
+      font-size: 26px;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    & h2 {
+      font-size: 20px;
+    }
+
+    & p {
+      font-size: 12px;
+    }
+  }
+`
+
+export const EngagementPlayFrame = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 90%;
+  transform: translate(-50%, -50%);
 `
 
 export const EngagementBackground = styled.div`
@@ -49,6 +88,10 @@ export const EngagementBackground = styled.div`
   background-attachment: fixed;
   /* filter: grayscale(25%); */
   transition: all 0.3s;
+
+  @media screen and (max-width: 768px) {
+    background-attachment: unset;
+  }
 `
 
 export const VideoModal = styled(Modal)`
@@ -72,27 +115,54 @@ export const VideoModal = styled(Modal)`
   }
 `
 
-export const VideoPlayButton = styled(PlayCircleOutlined)`
+export const VideoPlayButton = styled.img`
   position: absolute;
-  top: calc(50% + 40px);
+  top: 50%;
   left: 50%;
-  transform: scale(1) translate(-50%, -50%);
-  font-size: 56px;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
   color: white;
   transition: all 0.3s;
   cursor: pointer;
   z-index: 2;
 
   &:hover {
-    transform: scale(1.1) translate(-50%, -50%);
-
-    & ~ ${EngagementBackground} ${EngagementBackground} {
-      /* transform: scale(1.025); */
-      /* filter: grayscale(0%); */
-    }
+    width: 140px;
+    height: 140px;
 
     & ~ ${EngagementBackground} ${EngagementInner} {
       background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+
+    &:hover {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    width: 80px;
+    height: 80px;
+
+    &:hover {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 60px;
+    height: 60px;
+
+    &:hover {
+      width: 80px;
+      height: 80px;
     }
   }
 `

@@ -24,6 +24,10 @@ export const CoupleWrapper = styled.div`
     background-attachment: fixed;
     filter: grayscale(100%);
     z-index: 0;
+
+    @media screen and (max-width: 768px) {
+      background-attachment: unset;
+    }
   }
 
   &::after {
@@ -99,6 +103,11 @@ export const ImageItem = styled.img`
   border: 2px solid white;
   object-fit: cover;
   filter: grayscale(100%);
+  transition: all 0.3s;
+
+  &:hover {
+    filter: none;
+  }
 `
 
 export const MiddleImage = styled.img`

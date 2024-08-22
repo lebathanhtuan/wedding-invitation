@@ -25,7 +25,7 @@ export const LoveStoryCol = styled(Col)`
   & > img {
     max-width: 380px;
     width: 100%;
-    margin: -24px 0;
+    margin: 0;
     transform: rotateZ(6deg);
   }
 
@@ -38,8 +38,8 @@ export const LoveStoryCol = styled(Col)`
     align-items: center;
 
     & > img {
-      padding-right: 36px;
-      margin: 16px 0 -30px 0;
+      padding-right: 32px;
+      margin: 32px 0 -24px 0;
       transform: rotateZ(0);
     }
 
@@ -66,7 +66,7 @@ export const LoveStoryCol = styled(Col)`
       @media screen and (max-width: 768px) {
         & > img {
           margin: 32px 0 -24px 0;
-          padding-left: 36px;
+          padding-left: 34px;
           padding-right: 0;
           transform: rotateZ(0);
         }

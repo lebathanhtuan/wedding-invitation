@@ -11,16 +11,6 @@ export const HeaderWrapper = styled.header`
   width: 100%;
   background-color: transparent;
   z-index: 999;
-
-  ${({ $isFixed }) =>
-    $isFixed &&
-    css`
-      position: fixed;
-      top: 0;
-      left: 0;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      background-color: white;
-    `}
 `
 
 export const HeaderContainer = styled.div`
@@ -28,9 +18,19 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 16px 4px 16px 16px;
   max-width: ${({ theme }) => theme.breakpoint.xl};
   width: 100%;
+
+  & .ant-select {
+    width: 140px;
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoint.lg}) {
+    & .ant-select {
+      width: 100px;
+    }
+  }
 `
 
 export const HeaderMenuIcon = styled.div`
@@ -42,6 +42,11 @@ export const HeaderMenuIcon = styled.div`
 `
 
 export const HeaderLogo = styled.div`
+  & > img {
+    width: auto;
+    height: 52px;
+  }
+
   @media screen and (max-width: ${({ theme }) => theme.breakpoint.lg}) {
     position: absolute;
     top: 50%;

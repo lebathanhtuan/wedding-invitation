@@ -1,9 +1,13 @@
 import { Row, Col, Flex, Form, Button, Input, Segmented } from 'antd'
+import { Map as PigeonMap, Marker } from 'pigeon-maps'
 
 import T from 'src/components/Typography'
+import { RESTAURANT_COORDINATES } from 'src/constants/wedding'
 
+import restaurantLocationImage from 'src/assets/images/RestaurantLocation.png'
 import confirmBackgroundImage from 'src/assets/images/ConfirmBackground.jpg'
 import saveTheDateImage from 'src/assets/images/SaveTheDate.png'
+
 import * as S from './styled'
 
 function Confirm() {
@@ -11,21 +15,25 @@ function Confirm() {
     <S.ConfirmWrapper>
       <S.ConfirmContainer>
         <Row>
-          <Col md={10} xs={24}>
-            <S.ConfirmLeft $background={confirmBackgroundImage}>
-              <S.LeftContainer>
-                <img src={saveTheDateImage} alt="Save the date" />
-                <S.FormLine />
-                <T.Text color="white" weight="light" size="xxl" font="cormorant">
-                  08/09/2024
-                </T.Text>
-              </S.LeftContainer>
+          <Col xl={7} lg={10} xs={24}>
+            <S.ConfirmLeft>
+              <S.LeftWrapper $background={confirmBackgroundImage}>
+                <S.LeftContainer>
+                  <img src={saveTheDateImage} alt="Save the date" />
+                  <S.FormLine />
+                  <T.Text color="white" weight="light" size="xxl" font="cormorant">
+                    08/09/2024
+                  </T.Text>
+                </S.LeftContainer>
+              </S.LeftWrapper>
             </S.ConfirmLeft>
           </Col>
-          <Col md={14} xs={24}>
+          <Col xl={10} lg={14} xs={24}>
             <S.ConfirmRight>
               <Flex align="center" justify="center" vertical style={{ marginBottom: 16 }}>
-                <T.Title level={2}>Xác nhận tham dự</T.Title>
+                <T.Title level={2} color="primary">
+                  Xác nhận tham dự
+                </T.Title>
                 <T.Text align="center">
                   Đám cưới sẽ trọn vẹn và ý nghĩa hơn khi có sự hiện diện và chúc phúc của bạn. Hãy xác nhận sự có mặt
                   của mình để Tuấn & Ni chuẩn bị đón tiếp chu đáo nhất nha!
@@ -90,6 +98,20 @@ function Confirm() {
                 </T.Text>
               </Flex>
             </S.ConfirmRight>
+          </Col>
+          <Col xl={7} lg={24} xs={24}>
+            <S.MapWrapper>
+              <PigeonMap
+                defaultCenter={[RESTAURANT_COORDINATES.lat, RESTAURANT_COORDINATES.lng]}
+                defaultZoom={15}
+                minZoom={14}
+                maxZoom={18}
+              >
+                <Marker width={50} anchor={[RESTAURANT_COORDINATES.lat, RESTAURANT_COORDINATES.lng]}>
+                  <S.MapLocation src={restaurantLocationImage} alt="" />
+                </Marker>
+              </PigeonMap>
+            </S.MapWrapper>
           </Col>
         </Row>
       </S.ConfirmContainer>

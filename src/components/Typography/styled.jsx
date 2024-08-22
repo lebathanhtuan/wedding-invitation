@@ -74,6 +74,8 @@ const fontStyle = css`
         return '"WindSong", cursive'
       case 'birthstone':
         return '"Birthstone Bounce", cursive'
+      case 'poppins':
+        return '"Poppins", sans-serif'
       case 'dancing':
       default:
         return '"Dancing Script", cursive'

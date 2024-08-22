@@ -71,6 +71,13 @@ const GlobalStyle = createGlobalStyle`
   .ant-modal-mask {
     background-color: rgba(0, 0, 0, 0.7) !important;
   }
+
+  .ant-select .ant-select-selection-item span,
+  .ant-select-dropdown .ant-select-item-option-content span {
+    @media screen and (max-width: ${({ theme }) => theme.breakpoint.lg}) {
+      display: none;
+    }
+  }
 `
 
 export default GlobalStyle

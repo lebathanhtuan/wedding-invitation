@@ -18,8 +18,8 @@ function LoveStory() {
       <Container>
         <S.LoveStoryTitle align="center" justify="center" vertical>
           <T.Text size="lg">Chúng mình</T.Text>
-          <T.Title level={2} align="center" style={{ lineHeight: 1 }}>
-            Đã đến với nhau như thế nào
+          <T.Title level={2} align="center" color="primary" style={{ lineHeight: 1 }}>
+            Đã đến với nhau như thế nào?
           </T.Title>
         </S.LoveStoryTitle>
         <Row gutter={[32, -16]}>
@@ -27,14 +27,18 @@ function LoveStory() {
             <img src={loveStory1Image} alt="" />
           </S.LoveStoryCol>
           <S.LoveStoryCol md={{ span: 12, order: 2 }} xs={{ span: 24, order: 2 }}>
-            <T.Title size="xxl">Lần đầu gặp gỡ</T.Title>
+            <T.Title size="xxl" color="primary">
+              Lần đầu gặp gỡ
+            </T.Title>
             <T.Text font="cormorant">
               Chúng mình quen nhau tại một trung tâm dạy học tại Đà Nẵng. Lúc đó chú rể là giảng viên, còn cô dâu là học
               viên.
             </T.Text>
           </S.LoveStoryCol>
           <S.LoveStoryCol md={{ span: 12, order: 3 }} xs={{ span: 24, order: 4 }} $right>
-            <T.Title size="xxl">Nhận lời yêu nhau</T.Title>
+            <T.Title size="xxl" color="primary">
+              Nhận lời yêu nhau
+            </T.Title>
             <T.Text font="cormorant">
               Sau thời gian tìm hiểu thì chúng mình chính thức yêu nhau vào ngày 14/10/2020 và trải qua rất nhiều kỉ
               niệm cùng nhau
@@ -47,14 +51,18 @@ function LoveStory() {
             <img src={loveStory3Image} alt="" />
           </S.LoveStoryCol>
           <S.LoveStoryCol md={{ span: 12, order: 6 }} xs={{ span: 24, order: 6 }}>
-            <T.Title size="xxl">Hành trình yêu nhau</T.Title>
+            <T.Title size="xxl" color="primary">
+              Hành trình yêu nhau
+            </T.Title>
             <T.Text font="cormorant">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor ante feugiat elit blandit, vitae
               ultricies tortor accumsan.
             </T.Text>
           </S.LoveStoryCol>
           <S.LoveStoryCol md={{ span: 12, order: 7 }} xs={{ span: 24, order: 8 }} $right>
-            <T.Title size="xxl">Phút giây cầu hôn</T.Title>
+            <T.Title size="xxl" color="primary">
+              Phút giây cầu hôn
+            </T.Title>
             <T.Text font="cormorant">
               Chúng ta từ 2 con người xa lạ mà bước vào cuộc đời nhau. Và giờ đây chúng ta tiếp tục cùng nhau sang trang
               mới.
@@ -67,14 +75,18 @@ function LoveStory() {
             <img src={loveStory5Image} alt="" />
           </S.LoveStoryCol>
           <S.LoveStoryCol md={{ span: 12, order: 10 }} xs={{ span: 24, order: 10 }}>
-            <T.Title size="xxl">Ngày Lễ Đính Hôn</T.Title>
+            <T.Title size="xxl" color="primary">
+              Ngày Lễ Đính Hôn
+            </T.Title>
             <T.Text font="cormorant">
               Chúng ta từ 2 con người xa lạ mà bước vào cuộc đời nhau. Và giờ đây chúng ta tiếp tục cùng nhau sang trang
               mới.
             </T.Text>
           </S.LoveStoryCol>
           <S.LoveStoryCol md={{ span: 12, order: 11 }} xs={{ span: 24, order: 12 }} $right>
-            <T.Title size="xxl">Mơ một hạnh phúc</T.Title>
+            <T.Title size="xxl" color="primary">
+              Mơ một hạnh phúc
+            </T.Title>
             <T.Text font="cormorant">
               Em và anh không chỉ là người yêu mà chúng ta còn là tri kỷ. Ngày hôm nay, em sẽ là cô dâu của anh
             </T.Text>

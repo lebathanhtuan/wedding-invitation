@@ -35,35 +35,55 @@ export const ImageContent = styled.img`
 export const ImageLabel = styled(T.Text)`
   position: absolute;
   bottom: -32px;
-  right: -10px;
+  right: 2px;
   font-size: 200px;
   line-height: 200px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins';
+  font-weight: 500;
+  letter-spacing: -16px;
   color: #fff9f2;
   z-index: 2;
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1200px) {
     font-size: 170px;
-    bottom: -42px;
-    right: -8px;
+    bottom: -44px;
+    right: 1px;
+    letter-spacing: -13px;
+  }
+
+  @media screen and (max-width: 992px) {
+    font-size: 140px;
+    bottom: -54px;
+    right: 1px;
+    letter-spacing: -11px;
   }
 
   @media screen and (max-width: 768px) {
     font-size: 120px;
-    bottom: -58px;
-    right: -6px;
+    bottom: -60px;
+    right: 1px;
+    letter-spacing: -9px;
   }
 
   @media screen and (max-width: 576px) {
-    font-size: 100px;
-    bottom: -65px;
-    right: -5px;
+    font-size: 90px;
+    bottom: -70px;
+    right: 1px;
+    letter-spacing: -7px;
   }
 
   @media screen and (max-width: 460px) {
-    font-size: 80px;
-    bottom: -74px;
-    right: -4px;
+    font-size: 70px;
+    bottom: -77px;
+    right: 1px;
+    letter-spacing: -5px;
+  }
+
+  @media screen and (max-width: 400px) {
+    font-size: 52px;
+    bottom: -83px;
+    right: 1px;
+    letter-spacing: -3px;
   }
 `
 
@@ -80,14 +100,14 @@ export const ImageWrapper = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(180, 231, 253, 0.3);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
     transition: background 0.3s;
   }
 
   &:hover {
     &::after {
-      background: rgba(180, 231, 253, 0.1);
+      background: rgba(0, 0, 0, 0.1);
     }
 
     ${ImageContent} {

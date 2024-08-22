@@ -6,6 +6,8 @@ import Container from 'src/components/Container'
 import T from 'src/components/Typography'
 
 import engagementBackgroundImage from 'src/assets/images/EngagementBackground.jpg'
+import playBackgroundImage from 'src/assets/images/PlayBackground.gif'
+import playButtonImage from 'src/assets/images/PlayButton.gif'
 import * as S from './styled'
 
 function Engagement() {
@@ -13,22 +15,23 @@ function Engagement() {
 
   return (
     <S.EngagementWrapper>
-      <S.VideoPlayButton onClick={() => setIsShowVideoModal(true)} />
+      <S.VideoPlayButton src={playButtonImage} onClick={() => setIsShowVideoModal(true)} />
       <S.EngagementBackground $background={engagementBackgroundImage}>
         <S.EngagementInner>
           <Container>
             <S.EngagementContainer>
               <S.EngagementContent>
-                <Flex justify="center" align="center" vertical>
+                <Flex justify="space-between" align="center" vertical style={{ height: '100%' }}>
                   <T.Title level={2} color="light" align="center">
-                    Cùng xem Lễ Đính Hôn của chúng mình nhé!!!
+                    Lễ Đính Hôn của chúng mình!
                   </T.Title>
-                  <T.Text color="light">
+                  <T.Text color="light" align="center">
                     Tình yêu không phải là những lời thề non hẹn biển,
                     <br />
                     chỉ đơn giản là cùng nhau bình yên qua ngày.
                   </T.Text>
                 </Flex>
+                <S.EngagementPlayFrame src={playBackgroundImage} alt="" />
               </S.EngagementContent>
             </S.EngagementContainer>
           </Container>
