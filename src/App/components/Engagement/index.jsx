@@ -21,7 +21,7 @@ function Engagement() {
               <S.EngagementContent>
                 <Flex justify="center" align="center" vertical>
                   <T.Title level={2} color="light" align="center">
-                    Cùng xem video Lễ Đính Hôn của chúng mình nhé!!!
+                    Cùng xem Lễ Đính Hôn của chúng mình nhé!!!
                   </T.Title>
                   <T.Text color="light">
                     Tình yêu không phải là những lời thề non hẹn biển,

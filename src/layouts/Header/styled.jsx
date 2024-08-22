@@ -27,6 +27,7 @@ export const HeaderContainer = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 16px;
   max-width: ${({ theme }) => theme.breakpoint.xl};
   width: 100%;
@@ -56,6 +57,7 @@ export const HeaderMenu = styled.div`
   display: flex;
   align-items: center;
   gap: 24px;
+  width: max-content;
   transform: translate(-50%, -50%);
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoint.lg}) {

@@ -9,9 +9,9 @@ export const IntentionWrapper = styled.div`
 `
 
 export const PaintImage = styled.img`
-  margin-top: 16px;
   height: 500px;
   width: auto;
+  object-fit: cover;
 `
 
 export const GridContainer = styled.div`

@@ -10,7 +10,7 @@ import * as S from './styled'
 
 function Header() {
   const [isFixed, setIsFixed] = useState(true)
-  const [isShowSidebar, setIsShowSidebar] = useState(true)
+  const [isShowSidebar, setIsShowSidebar] = useState(false)
   const headerRef = useRef(null)
   const { t, i18n } = useTranslation()
 

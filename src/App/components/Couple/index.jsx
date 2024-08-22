@@ -18,7 +18,7 @@ function Couple() {
         <Flex align="center" justify="center" style={{ marginBottom: 8 }}>
           <S.TextImage src={coupleTextImage} alt="" />
         </Flex>
-        <Row gutter={[16, 16]} align="middle">
+        <Row gutter={[16, 16]} align={{ lg: 'middle', xs: 'stretch' }}>
           <Col lg={{ span: 10, order: 1 }} xs={{ span: 12, order: 2 }}>
             <Flex align="center" justify="center" vertical>
               <S.ImageWrapper>
@@ -28,10 +28,10 @@ function Couple() {
                   </S.ImageContent>
                 </S.ImageContainer>
               </S.ImageWrapper>
-              <T.Text size="xxxl" color="light" style={{ margin: '24px 0 16px' }}>
+              <S.CoupleName color="light" font="windSong">
                 Thanh Tuấn
-              </T.Text>
-              <T.Text size="lg" color="light" align="center">
+              </S.CoupleName>
+              <T.Text color="light" align="center">
                 Đối với chúng mình hôn nhân không phải là đích đến cuối của tình yêu mà là khởi đầu của hạnh phúc.
               </T.Text>
             </Flex>
@@ -40,10 +40,10 @@ function Couple() {
             <S.CoupleRow>
               <Col lg={{ span: 24 }} xs={{ span: 10 }}>
                 <Flex align="center" justify="center" vertical>
-                  <T.Text size="xxl" color="light">
-                    Nhà trai
+                  <T.Text size="xl" color="light">
+                    Nhà Trai
                   </T.Text>
-                  <T.Text size="lg" color="light" align="center">
+                  <T.Text color="light" align="center">
                     Ông. Lê Bá Thanh
                     <br />
                     Bà. Châu Thị Xuân
@@ -57,10 +57,10 @@ function Couple() {
               </Col>
               <Col lg={{ span: 24 }} xs={{ span: 10 }}>
                 <Flex align="center" justify="center" vertical>
-                  <T.Text size="xxl" color="light">
+                  <T.Text size="xl" color="light">
                     Nhà Gái
                   </T.Text>
-                  <T.Text size="lg" color="light" align="center">
+                  <T.Text color="light" align="center">
                     Ông. Nguyễn Văn Hiệu
                     <br />
                     Bà. Phan Thị Bích Vân
@@ -78,10 +78,10 @@ function Couple() {
                   </S.ImageContent>
                 </S.ImageContainer>
               </S.ImageWrapper>
-              <T.Text size="xxxl" color="light" style={{ margin: '24px 0 16px' }}>
+              <S.CoupleName color="light" font="windSong">
                 Bích Ni
-              </T.Text>
-              <T.Text size="lg" color="light" align="center">
+              </S.CoupleName>
+              <T.Text color="light" align="center">
                 Ở thời điểm phù hợp nhất, khoác lên mình bộ váy cưới đẹp nhất, gả cho người đáng tin cậy nhất, là anh.
               </T.Text>
             </Flex>

@@ -16,10 +16,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Shantell Sans', 'Noto Sans JP', sans-serif;
+    font-family: 'Dancing Script';
     font-size: 14px;
     line-height: 1.5;
     height: 100%;
+    color: ${({ theme }) => theme.colors.dark1};
   }
 
   button {
@@ -59,7 +60,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${({ theme }) => theme.colors.dark2};
+    color: ${({ theme }) => theme.colors.dark1};
     text-decoration: none;
 
     &:hover {

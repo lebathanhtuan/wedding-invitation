@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { Row } from 'antd'
 
+import T from 'src/components/Typography'
+
 export const CoupleWrapper = styled.div`
   position: relative;
   display: flex;
@@ -19,6 +21,7 @@ export const CoupleWrapper = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 95%;
+    background-attachment: fixed;
     filter: grayscale(100%);
     z-index: 0;
   }
@@ -39,10 +42,27 @@ export const CoupleWrapper = styled.div`
   }
 `
 
+export const CoupleName = styled(T.Text)`
+  margin: 24px 0 8px;
+  font-size: ${({ theme }) => theme.fontSizes.xxxl};
+
+  @media screen and (max-width: 576px) {
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+  }
+`
+
 export const ImageWrapper = styled.div`
   max-width: 300px;
   width: 100%;
   height: auto;
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 576px) {
+    width: 80%;
+  }
 `
 
 export const ImageContainer = styled.div`
@@ -61,6 +81,14 @@ export const ImageContent = styled.div`
   border-top-left-radius: 999px;
   border-top-right-radius: 999px;
   border: 2px solid white;
+
+  @media screen and (max-width: 768px) {
+    padding: 12px;
+  }
+
+  @media screen and (max-width: 576px) {
+    padding: 8px;
+  }
 `
 
 export const ImageItem = styled.img`

@@ -9,9 +9,9 @@ const breakpoint = {
 
 const colors = {
   light: '#fff',
-  dark1: '#2e2e2e',
+  dark1: '#555555',
   dark2: '#414141',
-  primary: '#dba191',
+  primary: '#b75c37',
   secondary: '#9bd4df',
   primaryGradient: 'linear-gradient(180deg, #FFCC21 0%, #FF963C 100%)',
   gray1: '#777777',
@@ -19,13 +19,20 @@ const colors = {
 }
 
 const fontSizes = {
-  xs: '10px',
-  sm: '12px',
-  md: '14px',
-  lg: '16px',
-  xl: '20px',
-  xxl: '24px',
-  xxxl: '32px',
+  // xs: '10px',
+  // sm: '12px',
+  // md: '14px',
+  // lg: '16px',
+  // xl: '20px',
+  // xxl: '24px',
+  // xxxl: '32px',
+  xs: '12px',
+  sm: '14px',
+  md: '18px',
+  lg: '22px',
+  xl: '26px',
+  xxl: '30px',
+  xxxl: '34px',
 }
 
 const fontWeights = {
@@ -36,8 +43,8 @@ const fontWeights = {
 
 const fontFamily = {
   jp: 'Noto Sans JP',
-  en: "'Shantell Sans', sans-serif",
-  vi: "'Shantell Sans', sans-serif",
+  en: 'Dancing Script',
+  vi: 'Dancing Script',
 }
 
 const borderRadius = {

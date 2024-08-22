@@ -5,25 +5,19 @@ export const OverviewWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  min-height: 500px;
-  max-height: 700px;
+  min-height: 100vh;
+  padding: 84px 0 72px;
   background-image: url(${({ $background }) => $background});
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-
-  @media screen and (max-width: 992px) {
-    min-height: 840px;
-    max-height: 840px;
-  }
+  overflow: hidden;
 `
 
 export const OverviewContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
 
   @media screen and (max-width: 992px) {
     flex-direction: column;
@@ -35,12 +29,29 @@ export const OverviewLeftContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 45%;
+  width: 35%;
   order: 1;
 
+  & > img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 16px;
+  }
+
   @media screen and (max-width: 992px) {
+    margin-top: 24px;
     width: 100%;
     order: 2;
+
+    & > img {
+      max-width: 250px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    & > img {
+      max-width: 200px;
+    }
   }
 `
 
@@ -49,7 +60,7 @@ export const OverviewRightContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 55%;
+  width: 65%;
   order: 2;
 
   @media screen and (max-width: 992px) {
@@ -190,6 +201,7 @@ export const PlayNote = styled.div`
   font-size: 12px;
   opacity: 0;
   transition: opacity 0.3s;
+  font-family: 'Shantell Sans';
 `
 
 export const PlayButton = styled.div`

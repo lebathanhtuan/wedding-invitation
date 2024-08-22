@@ -2,6 +2,7 @@ import { Map as PigeonMap, Marker } from 'pigeon-maps'
 
 import { RESTAURANT_COORDINATES } from 'src/constants/wedding'
 
+import restaurantLocationImage from 'src/assets/images/RestaurantLocation.png'
 import * as S from './styled'
 
 function Map() {
@@ -14,7 +15,9 @@ function Map() {
         minZoom={15}
         maxZoom={18}
       >
-        <Marker width={50} anchor={[RESTAURANT_COORDINATES.lat, RESTAURANT_COORDINATES.lng]} />
+        <Marker width={50} anchor={[RESTAURANT_COORDINATES.lat, RESTAURANT_COORDINATES.lng]}>
+          <S.MapLocation src={restaurantLocationImage} alt="" />
+        </Marker>
       </PigeonMap>
     </S.MapWrapper>
   )

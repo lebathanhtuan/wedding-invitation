@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react'
+import { useState, useMemo } from 'react'
 import { Statistic } from 'antd'
 import moment from 'moment'
 import ReactPlayer from 'react-player'
@@ -7,6 +7,7 @@ import Container from 'src/components/Container'
 import T from 'src/components/Typography'
 import { WEDDING_DAY } from 'src/constants/wedding'
 
+import primarySaveTheDateImage from 'src/assets/images/PrimarySaveTheDate.png'
 import overviewBackgroundImage from 'src/assets/images/OverviewBackground.png'
 import overviewCard1Image from 'src/assets/images/OverviewCard1.png'
 import overviewCard2Image from 'src/assets/images/OverviewCard2.png'
@@ -31,7 +32,7 @@ function Overview() {
     return (
       <S.CountdownContainer>
         <S.CountdownItem>
-          <T.Title level={3} weight="regular">
+          <T.Title level={3} weight="regular" color="primary">
             {days}
           </T.Title>
           <T.Text weight="light" size="lg">
@@ -39,7 +40,7 @@ function Overview() {
           </T.Text>
         </S.CountdownItem>
         <S.CountdownItem>
-          <T.Title level={3} weight="regular">
+          <T.Title level={3} weight="regular" color="primary">
             {hours}
           </T.Title>
           <T.Text weight="light" size="lg">
@@ -47,7 +48,7 @@ function Overview() {
           </T.Text>
         </S.CountdownItem>
         <S.CountdownItem>
-          <T.Title level={3} weight="regular">
+          <T.Title level={3} weight="regular" color="primary">
             {minutes}
           </T.Title>
           <T.Text weight="light" size="lg">
@@ -55,7 +56,7 @@ function Overview() {
           </T.Text>
         </S.CountdownItem>
         <S.CountdownItem>
-          <T.Title level={3} weight="regular">
+          <T.Title level={3} weight="regular" color="primary">
             {seconds}
           </T.Title>
           <T.Text weight="light" size="lg">
@@ -71,20 +72,15 @@ function Overview() {
       <Container>
         <S.OverviewContainer>
           <S.OverviewLeftContent>
-            <T.Title level={1} weight="regular">
-              Save the Date
-            </T.Title>
-            <T.Title level={2} weight="regular">
-              Thanh Tuấn & Bích Ni
-            </T.Title>
-            <T.Title level={3} weight="regular">
+            <img src={primarySaveTheDateImage} alt="" />
+            <div>
               {renderCountdown}
               <Statistic.Countdown
                 value={moment(WEDDING_DAY).valueOf()}
                 onChange={(value) => setCountdownTime(value)}
                 style={{ display: 'none' }}
               />
-            </T.Title>
+            </div>
             <S.PlayButton onClick={() => setIsShowVideoModal(true)}>
               <img src={letterPlayImage} className="letter" alt="" />
               <img src={moviePlayImage} className="movie" alt="" />

@@ -16,7 +16,7 @@ function Confirm() {
               <S.LeftContainer>
                 <img src={saveTheDateImage} alt="Save the date" />
                 <S.FormLine />
-                <T.Text color="white" weight="light" size="xl">
+                <T.Text color="white" weight="light" size="xxl" font="cormorant">
                   08/09/2024
                 </T.Text>
               </S.LeftContainer>
@@ -26,7 +26,7 @@ function Confirm() {
             <S.ConfirmRight>
               <Flex align="center" justify="center" vertical style={{ marginBottom: 16 }}>
                 <T.Title level={2}>Xác nhận tham dự</T.Title>
-                <T.Text size="sm" align="center">
+                <T.Text align="center">
                   Đám cưới sẽ trọn vẹn và ý nghĩa hơn khi có sự hiện diện và chúc phúc của bạn. Hãy xác nhận sự có mặt
                   của mình để Tuấn & Ni chuẩn bị đón tiếp chu đáo nhất nha!
                 </T.Text>
@@ -85,7 +85,7 @@ function Confirm() {
                 </Form>
               </S.ConfirmForm>
               <Flex align="center" justify="center" vertical style={{ marginTop: 16 }}>
-                <T.Text size="sm" align="center">
+                <T.Text align="center">
                   Cảm ơn bạn vì đã trở thành một phần quan trọng trong ngày đặc biệt của tụi mình.
                 </T.Text>
               </Flex>
