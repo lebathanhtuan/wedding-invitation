@@ -15,8 +15,9 @@ function Event() {
     <S.EventWrapper>
       <Container>
         <Flex align="center" justify="center" vertical style={{ marginBottom: 24 }}>
-          <T.Title level={2} color="primary">
-            Sự Kiện Quang Trọng
+          <T.Text size="lg">Sự Kiện</T.Text>
+          <T.Title level={2} align="center" color="primary" style={{ lineHeight: 1 }}>
+            Quan Trọng
           </T.Title>
         </Flex>
         <Row gutter={[24, 24]} align="middle">
