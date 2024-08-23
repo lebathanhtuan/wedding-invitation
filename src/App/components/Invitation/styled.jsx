@@ -38,7 +38,7 @@ export const ImageLabel = styled(T.Text)`
   right: 2px;
   font-size: 200px;
   line-height: 200px;
-  font-family: 'Poppins';
+  font-family: 'Poppins' !important;
   font-weight: 500;
   letter-spacing: -16px;
   color: #fff9f2;
@@ -140,6 +140,6 @@ export const InvitationContainer = styled.div`
   margin-top: 24px;
 
   & p {
-    font-family: '"Cormorant", serif' !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serifl;
   }
 `

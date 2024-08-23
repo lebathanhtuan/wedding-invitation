@@ -62,18 +62,14 @@ const titleStyle = css`
 const fontStyle = css`
   font-family: ${({ font, theme }) => {
     switch (font) {
-      case 'questrial':
-        return '"Questrial", sans-serif'
-      case 'greatVibes':
-        return '"Great Vibes", cursive'
+      case 'cambria':
+        return 'Cambria, Cochin, Georgia, Times, "Times New Roman", serifl'
       case 'cormorant':
         return '"Cormorant", serif'
       case 'shantellSans':
         return '"Shantell Sans", sans-serif'
       case 'windSong':
         return '"WindSong", cursive'
-      case 'birthstone':
-        return '"Birthstone Bounce", cursive'
       case 'poppins':
         return '"Poppins", sans-serif'
       case 'dancing':

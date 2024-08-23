@@ -6,7 +6,7 @@ import Invitation from './components/Invitation'
 import Couple from './components/Couple'
 import LoveStory from './components/LoveStory'
 import Engagement from './components/Engagement'
-// import Event from './components/Event'
+import Event from './components/Event'
 // import Quote from './components/Quote'
 // import Gallery from './components/Gallery'
 import Intention from './components/Intention'
@@ -25,7 +25,7 @@ function App() {
         <Invitation />
         <LoveStory />
         <Engagement />
-        {/* <Event /> */}
+        <Event />
         {/* <Quote /> */}
         {/* <Gallery /> */}
         <Intention />

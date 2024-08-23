@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Drawer } from 'antd'
 
 export const HeaderWrapper = styled.header`
