@@ -198,6 +198,8 @@ function Overview() {
             height={videoHeight}
             muted={videoMute}
             onEnded={onCloseVideoModal}
+            onPlay={() => setVideoPlay(true)}
+            onPause={() => setVideoPlay(false)}
           />
         </S.ModalContent>
       </S.VideoModal>
