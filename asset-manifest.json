@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wedding-invitation/static/css/main.4871281f.css",
-    "main.js": "/wedding-invitation/static/js/main.d2616c39.js",
+    "main.js": "/wedding-invitation/static/js/main.50e6fa94.js",
     "reactPlayerYouTube.js": "/wedding-invitation/static/js/reactPlayerYouTube.a5514583.chunk.js",
     "reactPlayerSoundCloud.js": "/wedding-invitation/static/js/reactPlayerSoundCloud.0479b4e4.chunk.js",
     "reactPlayerVimeo.js": "/wedding-invitation/static/js/reactPlayerVimeo.9e67bfd9.chunk.js",
@@ -56,12 +56,12 @@
     "static/media/SaveTheDate.png": "/wedding-invitation/static/media/SaveTheDate.85c727e0792387aa5abd.png",
     "static/media/MoviePlay.png": "/wedding-invitation/static/media/MoviePlay.ecfd87a689fefb7696f7.png",
     "static/media/Heart.png": "/wedding-invitation/static/media/Heart.494f86fa716f1c3bf992.png",
-    "static/media/RestaurantLocation.png": "/wedding-invitation/static/media/RestaurantLocation.158d3b7f43cdc937f7fe.png",
     "static/media/Logo.png": "/wedding-invitation/static/media/Logo.7a9c7b1d774dd9cf72e7.png",
     "static/media/JustMarried.png": "/wedding-invitation/static/media/JustMarried.bd3804eb65f08089afda.png",
+    "static/media/RestaurantLocation.png": "/wedding-invitation/static/media/RestaurantLocation.9f815706b741bdef629d.png",
     "index.html": "/wedding-invitation/index.html",
     "main.4871281f.css.map": "/wedding-invitation/static/css/main.4871281f.css.map",
-    "main.d2616c39.js.map": "/wedding-invitation/static/js/main.d2616c39.js.map",
+    "main.50e6fa94.js.map": "/wedding-invitation/static/js/main.50e6fa94.js.map",
     "reactPlayerYouTube.a5514583.chunk.js.map": "/wedding-invitation/static/js/reactPlayerYouTube.a5514583.chunk.js.map",
     "reactPlayerSoundCloud.0479b4e4.chunk.js.map": "/wedding-invitation/static/js/reactPlayerSoundCloud.0479b4e4.chunk.js.map",
     "reactPlayerVimeo.9e67bfd9.chunk.js.map": "/wedding-invitation/static/js/reactPlayerVimeo.9e67bfd9.chunk.js.map",
@@ -80,6 +80,6 @@
   },
   "entrypoints": [
     "static/css/main.4871281f.css",
-    "static/js/main.d2616c39.js"
+    "static/js/main.50e6fa94.js"
   ]
 }
