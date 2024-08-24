@@ -1,4 +1,5 @@
 import { Row, Col, Flex, Form, Button, Input, Segmented } from 'antd'
+import { CheckOutlined, CloseOutlined, QuestionOutlined } from '@ant-design/icons'
 import { Map as PigeonMap, Marker } from 'pigeon-maps'
 
 import T from 'src/components/Typography'
@@ -15,7 +16,7 @@ function Confirm() {
     <S.ConfirmWrapper>
       <S.ConfirmContainer>
         <Row>
-          <Col xl={7} lg={10} xs={24}>
+          <Col xl={7} md={10} xs={24}>
             <S.ConfirmLeft>
               <S.LeftWrapper $background={confirmBackgroundImage}>
                 <S.LeftContainer>
@@ -28,7 +29,7 @@ function Confirm() {
               </S.LeftWrapper>
             </S.ConfirmLeft>
           </Col>
-          <Col xl={10} lg={14} xs={24}>
+          <Col xl={10} md={14} xs={24}>
             <S.ConfirmRight>
               <Flex align="center" justify="center" vertical style={{ marginBottom: 16 }}>
                 <T.Title level={2} color="primary">
@@ -44,7 +45,7 @@ function Confirm() {
                   name="confirmForm"
                   layout="vertical"
                   initialValues={{
-                    isAttend: 'Có',
+                    isAttend: 'yes',
                     guestOf: 'Cô dâu',
                   }}
                 >
@@ -70,7 +71,26 @@ function Confirm() {
                       },
                     ]}
                   >
-                    <Segmented options={['Có', 'Không', 'Có thể']} size="large" />
+                    <Segmented
+                      options={[
+                        {
+                          label: 'Có',
+                          value: 'yes',
+                          icon: <CheckOutlined />,
+                        },
+                        {
+                          label: 'Không',
+                          value: 'no',
+                          icon: <CloseOutlined />,
+                        },
+                        {
+                          label: 'Có thể',
+                          value: 'maybe',
+                          icon: <QuestionOutlined />,
+                        },
+                      ]}
+                      size="large"
+                    />
                   </Form.Item>
                   <Form.Item
                     label="Bạn là khách mời của ai?"
@@ -99,7 +119,7 @@ function Confirm() {
               </Flex>
             </S.ConfirmRight>
           </Col>
-          <Col xl={7} lg={24} xs={24}>
+          <Col xl={7} md={24} xs={24}>
             <S.MapWrapper>
               <PigeonMap
                 defaultCenter={[RESTAURANT_COORDINATES.lat, RESTAURANT_COORDINATES.lng]}

@@ -58,7 +58,7 @@ function Invitation() {
           <S.RestaurantName level={1} font="dancing" weight="light" color="primary">
             Minh Toàn Galaxy
           </S.RestaurantName>
-          <T.Text>Tầng 3, Sảnh Eros, 306 Đ. 2 Tháng 9, Hải Châu, Đà Nẵng</T.Text>
+          <T.Text align="center">Tầng 3, Sảnh Eros, 306 Đ. 2 Tháng 9, Hải Châu, Đà Nẵng</T.Text>
           <T.Text style={{ margin: '8px 0' }}>VÀO LÚC 11H00</T.Text>
           <Flex align="center" justify="center">
             <T.Text size="lg" style={{ borderTop: '1px solid #2e2e2e', borderBottom: '1px solid #2e2e2e' }}>

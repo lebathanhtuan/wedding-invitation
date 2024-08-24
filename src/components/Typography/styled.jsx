@@ -96,34 +96,82 @@ export const H1 = styled.h1`
   ${titleStyle}
   ${fontStyle}
   ${typographyStyle}
+
+  @media screen and (max-width: 768px) {
+    font-size: ${({ size, theme }) => `${parseInt(size ? theme.fontSizes[size] : theme.fontSizes.xxxl) - 2}px`};
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: ${({ size, theme }) => `${parseInt(size ? theme.fontSizes[size] : theme.fontSizes.xxxl) - 4}px`};
+  }
 `
 export const H2 = styled.h2`
   font-size: ${({ size, theme }) => (size ? theme.fontSizes[size] : theme.fontSizes.xxl)};
   ${titleStyle}
   ${fontStyle}
   ${typographyStyle}
+
+  @media screen and (max-width: 768px) {
+    font-size: ${({ size, theme }) => `${parseInt(size ? theme.fontSizes[size] : theme.fontSizes.xxl) - 2}px`};
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: ${({ size, theme }) => `${parseInt(size ? theme.fontSizes[size] : theme.fontSizes.xxl) - 4}px`};
+  }
 `
 export const H3 = styled.h3`
   font-size: ${({ size, theme }) => (size ? theme.fontSizes[size] : theme.fontSizes.xl)};
   ${titleStyle}
   ${fontStyle}
   ${typographyStyle}
+
+  @media screen and (max-width: 768px) {
+    font-size: ${({ size, theme }) => `${parseInt(size ? theme.fontSizes[size] : theme.fontSizes.xl) - 2}px`};
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: ${({ size, theme }) => `${parseInt(size ? theme.fontSizes[size] : theme.fontSizes.xl) - 4}px`};
+  }
 `
 export const H4 = styled.h4`
   font-size: ${({ size, theme }) => (size ? theme.fontSizes[size] : theme.fontSizes.lg)};
   ${titleStyle}
   ${fontStyle}
   ${typographyStyle}
+
+  @media screen and (max-width: 768px) {
+    font-size: ${({ size, theme }) => `${parseInt(size ? theme.fontSizes[size] : theme.fontSizes.lg) - 2}px`};
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: ${({ size, theme }) => `${parseInt(size ? theme.fontSizes[size] : theme.fontSizes.lg) - 4}px`};
+  }
 `
 export const H5 = styled.h5`
   font-size: ${({ size, theme }) => (size ? theme.fontSizes[size] : theme.fontSizes.md)};
   ${titleStyle}
   ${fontStyle}
   ${typographyStyle}
+
+  @media screen and (max-width: 768px) {
+    font-size: ${({ size, theme }) => `${parseInt(size ? theme.fontSizes[size] : theme.fontSizes.md) - 2}px`};
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: ${({ size, theme }) => `${parseInt(size ? theme.fontSizes[size] : theme.fontSizes.md) - 4}px`};
+  }
 `
 export const H6 = styled.h6`
   font-size: ${({ size, theme }) => (size ? theme.fontSizes[size] : theme.fontSizes.sm)};
   ${titleStyle}
   ${fontStyle}
   ${typographyStyle}
+
+  @media screen and (max-width: 768px) {
+    font-size: ${({ size, theme }) => `${parseInt(size ? theme.fontSizes[size] : theme.fontSizes.sm) - 2}px`};
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: ${({ size, theme }) => `${parseInt(size ? theme.fontSizes[size] : theme.fontSizes.sm) - 4}px`};
+  }
 `

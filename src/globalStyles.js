@@ -69,7 +69,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .ant-modal-mask {
-    background-color: rgba(0, 0, 0, 0.7) !important;
+    background-color: rgba(0, 0, 0, 0.85) !important;
   }
 
   .ant-select .ant-select-selection-item span,

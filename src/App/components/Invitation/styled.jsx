@@ -6,7 +6,7 @@ export const InvitationWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px 0 34%;
+  padding: 24px 0 30%;
   background-image: url(${({ $background }) => $background});
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,15 +14,23 @@ export const InvitationWrapper = styled.div`
   background-color: #fff9f2;
 
   @media screen and (max-width: 1200px) {
-    padding: 16px 0 34%;
+    padding: 16px 0 32%;
   }
 
   @media screen and (max-width: 768px) {
-    padding-top: 0;
+    padding: 0 0 34%;
 
     & > div {
       padding: 4px 4px 0;
     }
+  }
+
+  @media screen and (max-width: 576px) {
+    padding: 0 0 36%;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding: 0 0 40%;
   }
 `
 

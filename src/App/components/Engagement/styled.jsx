@@ -95,6 +95,8 @@ export const EngagementBackground = styled.div`
 `
 
 export const VideoModal = styled(Modal)`
+  max-width: 1600px !important;
+
   .ant-modal-close {
     top: -36px;
     right: 0;
@@ -111,8 +113,22 @@ export const VideoModal = styled(Modal)`
   }
 
   .ant-modal-body {
+    position: relative;
     overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
   }
+`
+
+export const ModalContent = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 `
 
 export const VideoPlayButton = styled.img`

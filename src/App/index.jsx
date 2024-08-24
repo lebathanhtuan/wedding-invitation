@@ -1,3 +1,5 @@
+import { FloatButton } from 'antd'
+
 import Header from 'src/layouts/Header'
 import Footer from 'src/layouts/Footer'
 
@@ -33,6 +35,7 @@ function App() {
         <Thanks />
       </main>
       <Footer />
+      <FloatButton.BackTop type="primary" tooltip={<div>Cuộn đến đầu trang</div>} />
     </S.AppContainer>
   )
 }

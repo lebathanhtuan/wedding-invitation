@@ -1,12 +1,23 @@
+import { Flex } from 'antd'
 import styled from 'styled-components'
 import { Timeline } from 'antd'
+
+import T from 'src/components/Typography'
 
 export const EventWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px 0;
+  padding: 32px 0;
   overflow: hidden;
+`
+
+export const EventContainer = styled(Flex)`
+  margin-bottom: 48px;
+
+  @media screen and (max-width: 992px) {
+    margin-bottom: 12px;
+  }
 `
 
 export const EventLeft = styled.div`
@@ -25,6 +36,7 @@ export const EventLeft = styled.div`
 
   @media screen and (max-width: 992px) {
     margin-right: unset;
+    margin-bottom: 16px;
   }
 `
 
@@ -42,7 +54,12 @@ export const EventTimeline = styled(Timeline)`
   .ant-timeline-item:nth-child(2n - 1) {
     .ant-timeline-item-content {
       margin-inline-start: 60px;
-      width: calc(50% - 68px);
+      width: calc(50% - 58px);
+
+      @media screen and (max-width: 576px) {
+        margin-inline-start: 52px;
+        width: calc(50% - 46px);
+      }
     }
 
     .ant-timeline-item-label {
@@ -57,12 +74,34 @@ export const EventTimeline = styled(Timeline)`
 
     .ant-timeline-item-label {
       margin-inline-start: 42px;
-      width: calc(50% - 68px);
+      width: calc(50% - 58px);
+
+      @media screen and (max-width: 576px) {
+        margin-inline-start: 36px;
+        width: calc(50% - 48px);
+      }
     }
   }
 
   @media screen and (max-width: 992px) {
     margin-left: unset;
+  }
+`
+
+export const TimelineContent = styled.div`
+  padding-bottom: 40px;
+
+  @media screen and (max-width: 576px) {
+    padding-bottom: 16px;
+  }
+`
+
+export const TimelineName = styled(T.Title)`
+  line-height: 1.2;
+
+  @media screen and (max-width: 576px) {
+    margin-bottom: 4px;
+    font-size: ${({ theme }) => theme.fontSizes.lg};
   }
 `
 

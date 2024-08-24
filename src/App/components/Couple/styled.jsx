@@ -48,10 +48,18 @@ export const CoupleWrapper = styled.div`
 
 export const CoupleName = styled(T.Text)`
   margin: 24px 0 8px;
-  font-size: ${({ theme }) => theme.fontSizes.xxxl};
+  font-size: ${({ theme }) => theme.fontSizes.xxxl} !important;
+
+  @media screen and (max-width: 992px) {
+    font-size: ${({ theme }) => theme.fontSizes.xxl} !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: ${({ theme }) => theme.fontSizes.xl} !important;
+  }
 
   @media screen and (max-width: 576px) {
-    font-size: ${({ theme }) => theme.fontSizes.lg};
+    font-size: ${({ theme }) => theme.fontSizes.lg} !important;
   }
 `
 

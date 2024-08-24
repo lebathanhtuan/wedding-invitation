@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { Flex } from 'antd'
 import ReactPlayer from 'react-player'
 
 import Container from 'src/components/Container'
 import T from 'src/components/Typography'
+import { ENGAGEMENT_VIDEO } from 'src/constants/wedding'
 
 import engagementBackgroundImage from 'src/assets/images/EngagementBackground.jpg'
 import playBackgroundImage from 'src/assets/images/PlayBackground.gif'
@@ -12,6 +13,25 @@ import * as S from './styled'
 
 function Engagement() {
   const [isShowVideoModal, setIsShowVideoModal] = useState(false)
+
+  const renderVideoModal = useMemo(() => {
+    if (!isShowVideoModal) return null
+    return (
+      <S.VideoModal open centered footer={null} width="100%" onCancel={() => setIsShowVideoModal(false)}>
+        <S.ModalContent>
+          <ReactPlayer
+            id="video-modal"
+            url={ENGAGEMENT_VIDEO}
+            playing
+            controls
+            width="100%"
+            height="100%"
+            onEnded={() => setIsShowVideoModal(false)}
+          />
+        </S.ModalContent>
+      </S.VideoModal>
+    )
+  }, [isShowVideoModal])
 
   return (
     <S.EngagementWrapper>
@@ -37,18 +57,7 @@ function Engagement() {
           </Container>
         </S.EngagementInner>
       </S.EngagementBackground>
-      {isShowVideoModal && (
-        <S.VideoModal open centered footer={null} width={904} onCancel={() => setIsShowVideoModal(false)}>
-          <ReactPlayer
-            id="video-modal"
-            url="https://www.youtube.com/watch?v=kalKWUHbLkc"
-            playing
-            controls
-            width="904px"
-            height="560px"
-          />
-        </S.VideoModal>
-      )}
+      {renderVideoModal}
     </S.EngagementWrapper>
   )
 }
