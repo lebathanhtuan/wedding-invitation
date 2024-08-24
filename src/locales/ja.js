@@ -6,7 +6,14 @@ export const ja = {
       loveStory: 'ラブストーリー',
       engagement: 'エンゲージメント',
       event: 'イベント',
-      photo: '写真',
+    },
+  },
+  overview: {
+    countdown: {
+      days: '日',
+      hours: '時間',
+      minutes: '分',
+      seconds: '秒',
     },
   },
 }

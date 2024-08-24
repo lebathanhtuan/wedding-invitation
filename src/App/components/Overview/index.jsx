@@ -1,7 +1,9 @@
 import { useState, useMemo, useEffect } from 'react'
-import { Statistic } from 'antd'
+import { Statistic, Space } from 'antd'
 import moment from 'moment'
 import ReactPlayer from 'react-player'
+import { useTranslation } from 'react-i18next'
+import { RxPlay, RxPause, RxSpeakerLoud, RxSpeakerOff, RxCross2 } from 'react-icons/rx'
 
 import Container from 'src/components/Container'
 import T from 'src/components/Typography'
@@ -20,9 +22,14 @@ import moviePlayImage from 'src/assets/images/MoviePlay.png'
 import * as S from './styled'
 
 function Overview() {
-  const [firstVideoLoaded, setFirstVideoLoaded] = useState(true)
   const [isShowVideoModal, setIsShowVideoModal] = useState(true)
-  const [isResizeSP, setIsResizeSP] = useState(false)
+
+  const [videoPlay, setVideoPlay] = useState(true)
+  const [videoMute, setVideoMute] = useState(true)
+
+  const [deviceWidth, setDeviceWidth] = useState(window.innerWidth)
+  const [deviceHeight, setDeviceHeight] = useState(window.innerHeight)
+
   const [countdownTime, setCountdownTime] = useState({
     days: '00',
     hours: '00',
@@ -30,17 +37,20 @@ function Overview() {
     seconds: '00',
   })
 
+  const { t } = useTranslation()
+
+  const isResizeSP = useMemo(() => deviceWidth <= 768, [deviceWidth])
+
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 768) {
-        setIsResizeSP(true)
-      } else {
-        setIsResizeSP(false)
-      }
+      setDeviceWidth(window.innerWidth)
+      setDeviceHeight(window.innerHeight)
     }
 
     handleResize()
     window.addEventListener('resize', handleResize)
+    window.scrollTo(0, window.scrollHeight / 2)
+
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
@@ -53,6 +63,11 @@ function Overview() {
     setCountdownTime({ days, hours, minutes, seconds })
   }
 
+  const onCloseVideoModal = () => {
+    setIsShowVideoModal(false)
+    setVideoMute(false)
+  }
+
   const renderDays = useMemo(
     () => (
       <S.CountdownItem>
@@ -60,11 +75,11 @@ function Overview() {
           {countdownTime.days}
         </T.Title>
         <T.Text weight="light" size="lg">
-          Ngày
+          {t('overview.countdown.days')}
         </T.Text>
       </S.CountdownItem>
     ),
-    [countdownTime.days],
+    [countdownTime.days, t],
   )
 
   const renderHours = useMemo(
@@ -74,11 +89,11 @@ function Overview() {
           {countdownTime.hours}
         </T.Title>
         <T.Text weight="light" size="lg">
-          Giờ
+          {t('overview.countdown.hours')}
         </T.Text>
       </S.CountdownItem>
     ),
-    [countdownTime.hours],
+    [countdownTime.hours, t],
   )
 
   const renderMinutes = useMemo(
@@ -88,11 +103,11 @@ function Overview() {
           {countdownTime.minutes}
         </T.Title>
         <T.Text weight="light" size="lg">
-          Phút
+          {t('overview.countdown.minutes')}
         </T.Text>
       </S.CountdownItem>
     ),
-    [countdownTime.minutes],
+    [countdownTime.minutes, t],
   )
 
   const renderSeconds = useMemo(
@@ -102,45 +117,92 @@ function Overview() {
           {countdownTime.seconds}
         </T.Title>
         <T.Text weight="light" size="lg">
-          Giây
+          {t('overview.countdown.seconds')}
         </T.Text>
       </S.CountdownItem>
     ),
-    [countdownTime.seconds],
+    [countdownTime.seconds, t],
   )
 
   const renderVideoModal = useMemo(() => {
     if (!isShowVideoModal) return null
+    let videoWidth = 0
+    let videoHeight = 0
+    if (isResizeSP) {
+      videoWidth = (deviceHeight * 9) / 16 >= deviceWidth ? deviceWidth : (deviceHeight * 9) / 16 + 'px'
+      videoHeight = (deviceWidth * 16) / 9 >= deviceHeight ? deviceHeight : (deviceWidth * 16) / 9 + 'px'
+    } else {
+      videoWidth = '100%'
+      videoHeight = '100%'
+    }
     return (
       <S.VideoModal
         open
         centered
+        closeIcon={false}
         footer={null}
         width="100%"
-        onCancel={() => {
-          setIsShowVideoModal(false)
-          setFirstVideoLoaded(false)
-        }}
+        $isResizeSP={isResizeSP}
+        onCancel={onCloseVideoModal}
       >
+        <S.ModalAction>
+          <Space>
+            <S.VideoButton
+              type="primary"
+              size="large"
+              shape="circle"
+              icon={
+                videoPlay ? (
+                  <RxPause style={{ fontSize: 20, marginTop: 3 }} />
+                ) : (
+                  <RxPlay style={{ fontSize: 20, marginTop: 3 }} />
+                )
+              }
+              onClick={() => setVideoPlay(!videoPlay)}
+            >
+              <span className="btn-content">{videoPlay ? <span>Dừng</span> : <span>Phát</span>}</span>
+            </S.VideoButton>
+            <S.VideoButton
+              type="primary"
+              size="large"
+              shape="circle"
+              icon={
+                videoMute ? (
+                  <RxSpeakerLoud style={{ fontSize: 20, marginTop: 3 }} />
+                ) : (
+                  <RxSpeakerOff style={{ fontSize: 20, marginTop: 3 }} />
+                )
+              }
+              onClick={() => setVideoMute(!videoMute)}
+            >
+              <span className="btn-content">{videoMute ? <span>Bật âm</span> : <span>Tắt âm</span>}</span>
+            </S.VideoButton>
+            <S.VideoButton
+              type="primary"
+              size="large"
+              shape="circle"
+              icon={<RxCross2 style={{ fontSize: 20, marginTop: 3 }} />}
+              onClick={onCloseVideoModal}
+            >
+              <span className="btn-content">Đóng</span>
+            </S.VideoButton>
+          </Space>
+        </S.ModalAction>
         <S.ModalContent>
           <ReactPlayer
             id="video-modal"
             url={isResizeSP ? INVITATION_VIDEO_SP : INVITATION_VIDEO_PC}
-            playing
+            playing={videoPlay}
             playsinline
-            controls
-            width="100%"
-            height="100%"
-            muted={firstVideoLoaded}
-            onEnded={() => {
-              setIsShowVideoModal(false)
-              setFirstVideoLoaded(false)
-            }}
+            width={videoWidth}
+            height={videoHeight}
+            muted={videoMute}
+            onEnded={onCloseVideoModal}
           />
         </S.ModalContent>
       </S.VideoModal>
     )
-  }, [firstVideoLoaded, isResizeSP, isShowVideoModal])
+  }, [deviceHeight, deviceWidth, isResizeSP, isShowVideoModal, videoMute, videoPlay])
 
   return (
     <S.OverviewWrapper $background={overviewBackgroundImage}>

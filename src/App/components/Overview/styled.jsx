@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { Modal } from 'antd'
+import styled, { css } from 'styled-components'
+import { Modal, Button } from 'antd'
 
 export const OverviewWrapper = styled.div`
   display: flex;
@@ -308,8 +308,49 @@ export const PlayButton = styled.div`
   }
 `
 
+export const ModalContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  z-index: 2;
+`
+
+export const ModalAction = styled.div`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+`
+
+export const VideoButton = styled(Button)`
+  border-radius: 999px !important;
+  gap: 0;
+
+  & .btn-content {
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s;
+  }
+
+  &:hover {
+    padding: 0 8px !important;
+    gap: 8px;
+
+    & .btn-content {
+      width: 60px;
+      overflow: hidden;
+    }
+  }
+`
+
 export const VideoModal = styled(Modal)`
-  max-width: 1600px !important;
+  max-width: 1400px !important;
 
   .ant-modal-close {
     top: -36px;
@@ -323,28 +364,29 @@ export const VideoModal = styled(Modal)`
 
   .ant-modal-content {
     border-radius: 0;
-    padding: 1px;
+    padding: 0;
   }
 
   .ant-modal-body {
     position: relative;
     overflow: hidden;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
-
-    @media screen and (max-width: 768px) {
-      padding-top: 177.77%; /* 9:16 Aspect Ratio */
-    }
   }
-`
 
-export const ModalContent = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
+  ${({ $isResizeSP }) =>
+    !$isResizeSP &&
+    css`
+      .ant-modal-body {
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+
+        @media screen and (max-width: 768px) {
+          padding-top: 177.77%; /* 9:16 Aspect Ratio */
+        }
+      }
+
+      ${ModalContent} {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    `}
 `

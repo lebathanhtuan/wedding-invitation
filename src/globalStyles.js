@@ -78,6 +78,12 @@ const GlobalStyle = createGlobalStyle`
       display: none;
     }
   }
+
+  @media (max-width: 767px) {
+    :where(.css-dev-only-do-not-override-58kan).ant-modal-root .ant-modal {
+      margin: 0 auto;
+    }
+}
 `
 
 export default GlobalStyle

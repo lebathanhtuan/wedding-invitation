@@ -1,4 +1,5 @@
 import { Row, Col, Flex } from 'antd'
+import { useTranslation } from 'react-i18next'
 
 import Container from 'src/components/Container'
 import T from 'src/components/Typography'
@@ -12,6 +13,8 @@ import coupleTextImage from 'src/assets/images/CoupleText.png'
 import * as S from './styled'
 
 function Couple() {
+  const { t } = useTranslation()
+
   return (
     <S.CoupleWrapper $background={coupleBackgroundImage}>
       <Container>
@@ -29,10 +32,10 @@ function Couple() {
                 </S.ImageContainer>
               </S.ImageWrapper>
               <S.CoupleName color="light" font="windSong">
-                Thanh Tuấn
+                {t('couple.groom.name')}
               </S.CoupleName>
               <T.Text color="light" align="center">
-                Đối với chúng mình hôn nhân không phải là đích đến cuối của tình yêu mà là khởi đầu của hạnh phúc.
+                {t('couple.groom.description')}
               </T.Text>
             </Flex>
           </Col>
@@ -41,12 +44,12 @@ function Couple() {
               <Col lg={{ span: 24 }} xs={{ span: 10 }}>
                 <Flex align="center" justify="center" vertical>
                   <T.Text size="xl" color="light">
-                    Nhà Trai
+                    {t('couple.groom.label')}
                   </T.Text>
                   <T.Text color="light" align="center">
-                    Ông. Lê Bá Thanh
+                    {t('couple.groom.family.father')}
                     <br />
-                    Bà. Châu Thị Xuân
+                    {t('couple.groom.family.mother')}
                   </T.Text>
                 </Flex>
               </Col>
@@ -58,12 +61,12 @@ function Couple() {
               <Col lg={{ span: 24 }} xs={{ span: 10 }}>
                 <Flex align="center" justify="center" vertical>
                   <T.Text size="xl" color="light">
-                    Nhà Gái
+                    {t('couple.bride.label')}
                   </T.Text>
                   <T.Text color="light" align="center">
-                    Ông. Nguyễn Văn Hiệu
+                    {t('couple.bride.family.father')}
                     <br />
-                    Bà. Phan Thị Bích Vân
+                    {t('couple.bride.family.mother')}
                   </T.Text>
                 </Flex>
               </Col>
@@ -79,10 +82,10 @@ function Couple() {
                 </S.ImageContainer>
               </S.ImageWrapper>
               <S.CoupleName color="light" font="windSong">
-                Bích Ni
+                {t('couple.bride.name')}
               </S.CoupleName>
               <T.Text color="light" align="center">
-                Ở thời điểm phù hợp nhất, khoác lên mình bộ váy cưới đẹp nhất, gả cho người đáng tin cậy nhất, là anh.
+                {t('couple.bride.description')}
               </T.Text>
             </Flex>
           </Col>

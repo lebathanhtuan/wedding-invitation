@@ -3,7 +3,6 @@ import { Button, Select, Drawer } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { MenuOutlined } from '@ant-design/icons'
 
-import T from 'src/components/Typography'
 import { MENU_ITEMS } from 'src/constants/layout'
 
 import logoImage from 'src/assets/images/Logo.png'

@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { Modal } from 'antd'
-import T from 'src/components/Typography'
 
 export const EngagementWrapper = styled.div`
   position: relative;
@@ -95,7 +94,7 @@ export const EngagementBackground = styled.div`
 `
 
 export const VideoModal = styled(Modal)`
-  max-width: 1600px !important;
+  max-width: 1400px !important;
 
   .ant-modal-close {
     top: -36px;

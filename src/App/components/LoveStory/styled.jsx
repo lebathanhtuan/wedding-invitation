@@ -5,7 +5,7 @@ export const LoveStoryWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px 0;
+  padding: 32px 0;
 `
 
 export const LoveStoryTitle = styled(Flex)`

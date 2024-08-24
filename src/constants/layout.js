@@ -19,8 +19,4 @@ export const MENU_ITEMS = [
     label: 'header.menu.event',
     href: '#event',
   },
-  {
-    label: 'header.menu.photo',
-    href: '#photo',
-  },
 ]

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Row, Col, Flex } from 'antd'
 import moment from 'moment'
 import Lightbox from 'yet-another-react-lightbox'
+import { useTranslation } from 'react-i18next'
 // import optional lightbox plugins
 import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen'
 import Slideshow from 'yet-another-react-lightbox/plugins/slideshow'
@@ -24,6 +25,7 @@ import fullRightImage from 'src/assets/photos/QUYS9514-min.jpg'
 import * as S from './styled'
 
 function Invitation() {
+  const { t } = useTranslation()
   const [lightboxActiveIndex, setLightboxActiveIndex] = useState(-1)
 
   return (
@@ -51,32 +53,32 @@ function Invitation() {
         </Row>
         <S.InvitationContainer>
           <T.Text size="sm" align="center">
-            TRÂN TRỌNG KÍNH MỜI QUÝ KHÁCH
+            {t('invitation.title1')}
             <br />
-            ĐẾN DỰ BỮA TIỆC CHUNG VUI CÙNG GIA ĐÌNH CHÚNG TÔI TẠI
+            {t('invitation.title2')}
           </T.Text>
           <S.RestaurantName level={1} font="dancing" weight="light" color="primary">
-            Minh Toàn Galaxy
+            {t('invitation.resName')}
           </S.RestaurantName>
-          <T.Text align="center">Tầng 3, Sảnh Eros, 306 Đ. 2 Tháng 9, Hải Châu, Đà Nẵng</T.Text>
-          <T.Text style={{ margin: '8px 0' }}>VÀO LÚC 11H00</T.Text>
+          <T.Text align="center">{t('invitation.address')}</T.Text>
+          <T.Text style={{ margin: '8px 0' }}>{t('invitation.time')}</T.Text>
           <Flex align="center" justify="center">
             <T.Text size="lg" style={{ borderTop: '1px solid #2e2e2e', borderBottom: '1px solid #2e2e2e' }}>
-              CHỦ NHẬT
+              {t('invitation.days')}
             </T.Text>
             <Flex align="center" justify="center" vertical style={{ margin: '0 8px' }}>
-              <T.Text size="xs">NGÀY</T.Text>
+              <T.Text size="xs">{t('invitation.dateTxt')}</T.Text>
               <T.Text size="xxl" style={{ lineHeight: 1.1 }}>
-                08
+                {t('invitation.date')}
               </T.Text>
-              <T.Text size="xs">2024</T.Text>
+              <T.Text size="xs">{t('invitation.year')}</T.Text>
             </Flex>
             <T.Text size="lg" style={{ borderTop: '1px solid #2e2e2e', borderBottom: '1px solid #2e2e2e' }}>
-              THÁNG 9
+              {t('invitation.months')}
             </T.Text>
           </Flex>
-          <T.Text style={{ marginTop: 4 }}>(Nhằm ngày 06 tháng 08 năm Giáp Thìn)</T.Text>
-          <T.Text>Đón khách: 11h00 - Khai tiệc: 12h00</T.Text>
+          <T.Text style={{ marginTop: 4 }}>{t('invitation.fullDateVi')}</T.Text>
+          <T.Text>{t('invitation.timeParty')}</T.Text>
         </S.InvitationContainer>
       </Container>
       <Lightbox
