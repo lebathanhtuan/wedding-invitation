@@ -3,9 +3,17 @@ export const vi = {
     menu: {
       overview: 'Tổng quan',
       couple: 'Cặp đôi',
+      invitation: 'Lời mời',
       loveStory: 'Chuyện tình yêu',
-      engagement: 'Đám hỏi',
+      engagement: 'Đính hôn',
       event: 'Sự kiện',
+    },
+    sidebar: {
+      designBy: 'Thiết kế bởi Chú Rễ',
+    },
+    translate: {
+      vi: 'Việt',
+      en: 'Anh',
     },
   },
   overview: {
@@ -38,18 +46,18 @@ export const vi = {
     },
   },
   invitation: {
-    title1: 'TRÂN TRỌNG KÍNH MỜI QUÝ KHÁCH',
-    title2: 'ĐẾN DỰ BỮA TIỆC CHUNG VUI CÙNG GIA ĐÌNH CHÚNG TÔI TẠI',
-    resName: 'Minh Toàn Galaxy',
+    title: 'TRÂN TRỌNG KÍNH MỜI QUÝ KHÁCH',
+    subTitle: 'ĐẾN DỰ BỮA TIỆC CHUNG VUI CÙNG GIA ĐÌNH CHÚNG TÔI TẠI',
+    restaurant: 'Minh Toàn Galaxy',
     address: 'Tầng 3, Sảnh Eros, 306 Đ. 2 Tháng 9, Hải Châu, Đà Nẵng',
     time: 'VÀO LÚC 11H00',
-    dateTxt: 'NGÀY',
-    date: '08',
-    days: 'CHỦ NHẬT',
-    months: 'THÁNG 9',
-    year: '2024',
-    fullDateVi: '(Nhằm ngày 06 tháng 08 năm Giáp Thìn)',
-    timeParty: 'Đón khách: 11h00 - Khai tiệc: 12h00',
+    date: 'NGÀY',
+    DD: '08',
+    dddd: 'CHỦ NHẬT',
+    MMMM: 'THÁNG 9',
+    YYYY: '2024',
+    viDate: '(Nhằm ngày 06 tháng 08 năm Giáp Thìn)',
+    schedule: 'Đón khách: 11h00 - Khai tiệc: 12h00',
   },
   loveStory: {
     title: 'Chúng mình',
@@ -83,6 +91,30 @@ export const vi = {
       title: 'Mơ một hạnh phúc',
       description:
         'Cảm ơn và trân trọng tất cả! Mong rằng chúng mình sẽ được sống hạnh phúc từng ngày, từng giờ của hôm nay và về sau. Từ nay chúng ta đã về chung một nhà rồi!',
+    },
+  },
+  engagement: {
+    title: 'Lễ Đính Hôn của chúng mình!',
+    description: 'Tình yêu không phải là những lời thề non hẹn biển,',
+    subDescription: 'chỉ đơn giản là cùng nhau bình yên qua ngày.',
+  },
+  event: {
+    title: 'Sự kiện',
+    subTitle: 'Quan trọng',
+    event1: {
+      title: 'Lễ Vu Quy',
+      location: 'Nhà gái',
+      address: 'Điện Thọ, Điện Bàn, Quảng Nam',
+    },
+    event2: {
+      title: 'Rước Dâu',
+      location: 'Nhà gái',
+      address: 'Điện Thọ, Điện Bàn, Quảng Nam',
+    },
+    event3: {
+      title: 'Lễ Thành Hôn',
+      location: 'Nhà hàng tiệc cưới Minh Toàn Galaxy',
+      address: '306 Đường 2/9, Hải Châu, Đà Nẵng',
     },
   },
 }

@@ -3,9 +3,17 @@ export const en = {
     menu: {
       overview: 'Overview',
       couple: 'Couple',
+      invitation: 'Invitation',
       loveStory: 'Love Story',
       engagement: 'Engagement',
       event: 'Event',
+    },
+    sidebar: {
+      designBy: 'Designed by Groom',
+    },
+    translate: {
+      vi: 'Vietnamese',
+      en: 'English',
     },
   },
   overview: {
@@ -38,18 +46,18 @@ export const en = {
     },
   },
   invitation: {
-    title1: 'WE ARE PLEASED TO INVITE YOU',
-    title2: 'TO CELEBRATE OUR WEDDING AT',
-    resName: 'Minh Toan Galaxy',
-    address: '3rd Floor, Eros Hall, 306 2 September St., Hai Chau, Da Nang',
+    title: 'WE ARE PLEASED TO INVITE YOU',
+    subTitle: 'TO CELEBRATE OUR WEDDING AT',
+    restaurant: 'Minh Toan Galaxy',
+    address: '3rd Floor, Eros Lobby, 306 2 September St., Hai Chau, Da Nang',
     time: 'AT 11:00 AM',
-    dateTxt: 'ON',
-    date: '08',
-    days: 'SUNDAY',
-    months: 'SEPTEMBER',
-    year: '2024',
-    fullDateVi: '(On August 6, 2024)',
-    timeParty: 'Guest reception: 11:00 - Party starts: 12:00',
+    date: 'ON',
+    DD: '08',
+    dddd: 'SUNDAY',
+    MMMM: 'SEPTEMBER',
+    YYYY: '2024',
+    viDate: '(On August 6, 2024 Lunar Month)',
+    schedule: 'Guest reception: 11:00 - Party starts: 12:00',
   },
   loveStory: {
     title: 'How',
@@ -82,5 +90,10 @@ export const en = {
       description:
         'Thank you and appreciate everything! Hope that we will be happy every day, every hour of today and in the future. From now on, we have come home together!',
     },
+  },
+  engagement: {
+    title: 'Our Engagement!',
+    description: 'Love is not about vows,',
+    subDescription: 'it is simply about living together peacefully day by day.',
   },
 }

@@ -16,7 +16,7 @@ import * as S from './styled'
 function LoveStory() {
   const { t } = useTranslation()
   return (
-    <S.LoveStoryWrapper>
+    <S.LoveStoryWrapper id="love-story">
       <Container>
         <S.LoveStoryTitle align="center" justify="center" vertical>
           <T.Text size="lg">{t('loveStory.title')}</T.Text>

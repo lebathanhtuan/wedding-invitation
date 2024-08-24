@@ -68,8 +68,17 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  .ant-modal-mask {
+  .ant-drawer-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ant-modal-mask, {
     background-color: rgba(0, 0, 0, 0.85) !important;
+  }
+
+  .ant-drawer-mask {
+    background-color: rgba(0, 0, 0, 0.75) !important;
   }
 
   .ant-select .ant-select-selection-item span,
@@ -80,7 +89,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @media (max-width: 767px) {
-    :where(.css-dev-only-do-not-override-58kan).ant-modal-root .ant-modal {
+    .ant-modal-root .ant-modal {
       margin: 0 auto;
     }
 }

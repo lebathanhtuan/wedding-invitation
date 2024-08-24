@@ -25,11 +25,11 @@ import fullRightImage from 'src/assets/photos/QUYS9514-min.jpg'
 import * as S from './styled'
 
 function Invitation() {
-  const { t } = useTranslation()
   const [lightboxActiveIndex, setLightboxActiveIndex] = useState(-1)
+  const { t } = useTranslation()
 
   return (
-    <S.InvitationWrapper $background={skylineImage}>
+    <S.InvitationWrapper id="invitation" $background={skylineImage}>
       <Container>
         <Row gutter={4}>
           <Col span={8}>
@@ -53,32 +53,32 @@ function Invitation() {
         </Row>
         <S.InvitationContainer>
           <T.Text size="sm" align="center">
-            {t('invitation.title1')}
+            {t('invitation.title')}
             <br />
-            {t('invitation.title2')}
+            {t('invitation.subTitle')}
           </T.Text>
           <S.RestaurantName level={1} font="dancing" weight="light" color="primary">
-            {t('invitation.resName')}
+            {t('invitation.restaurant')}
           </S.RestaurantName>
           <T.Text align="center">{t('invitation.address')}</T.Text>
           <T.Text style={{ margin: '8px 0' }}>{t('invitation.time')}</T.Text>
           <Flex align="center" justify="center">
             <T.Text size="lg" style={{ borderTop: '1px solid #2e2e2e', borderBottom: '1px solid #2e2e2e' }}>
-              {t('invitation.days')}
+              {t('invitation.dddd')}
             </T.Text>
             <Flex align="center" justify="center" vertical style={{ margin: '0 8px' }}>
-              <T.Text size="xs">{t('invitation.dateTxt')}</T.Text>
+              <T.Text size="xs">{t('invitation.date')}</T.Text>
               <T.Text size="xxl" style={{ lineHeight: 1.1 }}>
-                {t('invitation.date')}
+                {t('invitation.DD')}
               </T.Text>
-              <T.Text size="xs">{t('invitation.year')}</T.Text>
+              <T.Text size="xs">{t('invitation.YYYY')}</T.Text>
             </Flex>
             <T.Text size="lg" style={{ borderTop: '1px solid #2e2e2e', borderBottom: '1px solid #2e2e2e' }}>
-              {t('invitation.months')}
+              {t('invitation.MMMM')}
             </T.Text>
           </Flex>
-          <T.Text style={{ marginTop: 4 }}>{t('invitation.fullDateVi')}</T.Text>
-          <T.Text>{t('invitation.timeParty')}</T.Text>
+          <T.Text style={{ marginTop: 4 }}>{t('invitation.viDate')}</T.Text>
+          <T.Text>{t('invitation.schedule')}</T.Text>
         </S.InvitationContainer>
       </Container>
       <Lightbox

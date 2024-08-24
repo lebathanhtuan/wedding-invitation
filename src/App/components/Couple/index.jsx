@@ -16,7 +16,7 @@ function Couple() {
   const { t } = useTranslation()
 
   return (
-    <S.CoupleWrapper $background={coupleBackgroundImage}>
+    <S.CoupleWrapper id="couple" $background={coupleBackgroundImage}>
       <Container>
         <Flex align="center" justify="center" style={{ marginBottom: 8 }}>
           <S.TextImage src={coupleTextImage} alt="" />

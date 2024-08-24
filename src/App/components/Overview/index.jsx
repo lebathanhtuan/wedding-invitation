@@ -54,7 +54,7 @@ function Overview() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  const onChangeCountdown = (value) => {
+  const handleChangeCountdown = (value) => {
     const vietnamTimezoneOffset = 7 * 60 * 60 * 1000
     const oneHourTime = 60 * 60 * 1000
     const [days, hours, minutes, seconds] = moment(value - vietnamTimezoneOffset - oneHourTime)
@@ -63,7 +63,7 @@ function Overview() {
     setCountdownTime({ days, hours, minutes, seconds })
   }
 
-  const onCloseVideoModal = () => {
+  const handleCloseVideoModal = () => {
     setIsShowVideoModal(false)
     setVideoMute(false)
   }
@@ -143,7 +143,7 @@ function Overview() {
         footer={null}
         width="100%"
         $isResizeSP={isResizeSP}
-        onCancel={onCloseVideoModal}
+        onCancel={handleCloseVideoModal}
       >
         <S.ModalAction>
           <Space>
@@ -182,7 +182,7 @@ function Overview() {
               size="large"
               shape="circle"
               icon={<RxCross2 style={{ fontSize: 20, marginTop: 3 }} />}
-              onClick={onCloseVideoModal}
+              onClick={handleCloseVideoModal}
             >
               <span className="btn-content">Đóng</span>
             </S.VideoButton>
@@ -197,7 +197,7 @@ function Overview() {
             width={videoWidth}
             height={videoHeight}
             muted={videoMute}
-            onEnded={onCloseVideoModal}
+            onEnded={handleCloseVideoModal}
             onPlay={() => setVideoPlay(true)}
             onPause={() => setVideoPlay(false)}
           />
@@ -207,7 +207,7 @@ function Overview() {
   }, [deviceHeight, deviceWidth, isResizeSP, isShowVideoModal, videoMute, videoPlay])
 
   return (
-    <S.OverviewWrapper $background={overviewBackgroundImage}>
+    <S.OverviewWrapper id="overview" $background={overviewBackgroundImage}>
       <Container>
         <S.OverviewContainer>
           <S.OverviewLeftContent>
@@ -221,7 +221,7 @@ function Overview() {
               </S.CountdownContainer>
               <Statistic.Countdown
                 value={moment(WEDDING_DAY).valueOf()}
-                onChange={onChangeCountdown}
+                onChange={handleChangeCountdown}
                 style={{ display: 'none' }}
               />
             </div>

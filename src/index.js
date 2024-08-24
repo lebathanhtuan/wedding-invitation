@@ -19,7 +19,7 @@ root.render(
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: '#b75c37',
+          colorPrimary: '#b23e1a',
           fontFamily: "'Shantell Sans', sans-serif",
         },
       }}

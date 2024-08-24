@@ -8,8 +8,12 @@ export const MENU_ITEMS = [
     href: '#couple',
   },
   {
+    label: 'header.menu.invitation',
+    href: '#invitation',
+  },
+  {
     label: 'header.menu.loveStory',
-    href: '#loveStory',
+    href: '#love-story',
   },
   {
     label: 'header.menu.engagement',

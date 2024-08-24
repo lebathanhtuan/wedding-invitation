@@ -26,9 +26,13 @@ export const HeaderContainer = styled.div`
     width: 140px;
   }
 
+  & .ant-select-selector {
+    text-align: right;
+  }
+
   @media screen and (max-width: ${({ theme }) => theme.breakpoint.lg}) {
     & .ant-select {
-      width: 100px;
+      width: 115px;
     }
   }
 `
@@ -73,6 +77,8 @@ export const HeaderMenu = styled.div`
 export const MenuItem = styled.a`
   position: relative;
   font-size: ${({ theme }) => theme.fontSizes.lg};
+  text-align: center;
+  line-height: 1.2;
   transition: color 0.2s;
   cursor: pointer;
 
@@ -97,7 +103,48 @@ export const MenuItem = styled.a`
   }
   
   &:hover::after,
-  &:focus::after{
+  &:focus::after {
+    transform: scale(1);
+  }
+`
+
+export const SidebarLogo = styled.div`
+  max-width: 100px;
+  margin-bottom: 24px;
+`
+
+export const SidebarItem = styled.a`
+  position: relative;
+  margin-bottom: 8px;
+  max-width: fit-content;
+  font-size: ${({ theme }) => theme.fontSizes.lg};
+  line-height: 1.4;
+  transition: color 0.2s;
+  font-family: 'Dancing Script', cursive;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    margin: 0 10%;
+    width: 80%;
+    height: 0.1rem;
+    border-radius: 999px;
+    background-color: ${({ theme }) => theme.colors.secondary};
+    opacity 1;
+    transform: scale(0);
+    transform-origin: center;
+    transition: opacity 300ms, transform 300ms;
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary};
+  }
+  
+  &:hover::after,
+  &:focus::after {
     transform: scale(1);
   }
 `

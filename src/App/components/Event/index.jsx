@@ -1,4 +1,5 @@
 import { Row, Col } from 'antd'
+import { useTranslation } from 'react-i18next'
 
 import Container from 'src/components/Container'
 import T from 'src/components/Typography'
@@ -9,13 +10,15 @@ import brideGroomPaint2 from 'src/assets/images/BrideGroomPaint2.png'
 import * as S from './styled'
 
 function Event() {
+  const { t } = useTranslation()
+
   return (
-    <S.EventWrapper>
+    <S.EventWrapper id="event">
       <Container>
         <S.EventContainer align="center" justify="center" vertical>
-          <T.Text size="lg">Sự Kiện</T.Text>
+          <T.Text size="lg">{t('event.title')}</T.Text>
           <T.Title level={2} align="center" color="primary" style={{ lineHeight: 1 }}>
-            Quan Trọng
+            {t('event.subTitle')}
           </T.Title>
         </S.EventContainer>
         <Row gutter={[24, 24]} align="middle">

@@ -389,4 +389,10 @@ export const VideoModal = styled(Modal)`
         left: 0;
       }
     `}
+
+  @media screen and (max-width: 768px) {
+    .ant-modal {
+      margin: 0 auto !important;
+    }
+  }
 `

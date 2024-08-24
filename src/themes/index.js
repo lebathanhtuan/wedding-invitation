@@ -11,7 +11,7 @@ const colors = {
   light: '#fff',
   dark1: '#555555',
   dark2: '#414141',
-  primary: '#b75c37',
+  primary: '#b23e1a',
   secondary: '#9bd4df',
   primaryGradient: 'linear-gradient(180deg, #FFCC21 0%, #FF963C 100%)',
   gray1: '#777777',

@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { Flex } from 'antd'
 import ReactPlayer from 'react-player'
+import { useTranslation } from 'react-i18next'
 
 import Container from 'src/components/Container'
 import T from 'src/components/Typography'
@@ -13,6 +14,8 @@ import * as S from './styled'
 
 function Engagement() {
   const [isShowVideoModal, setIsShowVideoModal] = useState(false)
+
+  const { t } = useTranslation()
 
   const renderVideoModal = useMemo(() => {
     if (!isShowVideoModal) return null
@@ -34,7 +37,7 @@ function Engagement() {
   }, [isShowVideoModal])
 
   return (
-    <S.EngagementWrapper>
+    <S.EngagementWrapper id="engagement">
       <S.VideoPlayButton src={playButtonImage} onClick={() => setIsShowVideoModal(true)} />
       <S.EngagementBackground $background={engagementBackgroundImage}>
         <S.EngagementInner>
@@ -43,12 +46,12 @@ function Engagement() {
               <S.EngagementContent>
                 <Flex justify="space-between" align="center" vertical style={{ height: '100%' }}>
                   <T.Title level={2} color="light" align="center">
-                    Lễ Đính Hôn của chúng mình!
+                    {t('engagement.title')}
                   </T.Title>
                   <T.Text color="light" align="center">
-                    Tình yêu không phải là những lời thề non hẹn biển,
+                    {t('engagement.description')}
                     <br />
-                    chỉ đơn giản là cùng nhau bình yên qua ngày.
+                    {t('engagement.subDescription')}
                   </T.Text>
                 </Flex>
                 <S.EngagementPlayFrame src={playBackgroundImage} alt="" />
