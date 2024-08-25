@@ -96,4 +96,59 @@ export const en = {
     description: 'Love is not about vows,',
     subDescription: 'it is simply about living together peacefully day by day.',
   },
+  event: {
+    title: 'Event',
+    subTitle: 'The most important days',
+    event1: {
+      title: 'Vu Quy Ceremony',
+      location: "Bride's house",
+      address: 'Đien Tho, Đien Ban, Quang Nam',
+    },
+    event2: {
+      title: 'Lead bride',
+      location: "Bride's house",
+      address: 'Đien Tho, Đien Ban, Quang Nam',
+    },
+    event3: {
+      title: 'The Wedding',
+      subLocation: 'Restaurant',
+      location: 'Minh Toan Galaxy',
+      address: '306 2/9 St., Hai Chau, Đa Nang',
+    },
+  },
+  intention: {
+    label1: 'We cordially invite you to join us for a party',
+    label2: 'to mark the day we become one!',
+  },
+  confirm: {
+    title: 'Confirmation of attendance',
+    subTitle:
+      'The wedding will be complete and meaningful with your presence and blessings. Please confirm your attendance so that Tuấn & Ni can prepare to welcome you!',
+    name: 'Your name',
+    isAttend: 'Will you attend?',
+    yes: 'Yes',
+    no: 'No',
+    maybe: 'Maybe',
+    guestOf: 'Who are you a guest of?',
+    bride: 'Bride',
+    groom: 'Groom',
+    wish: 'Your wish',
+    submit: 'Confirm',
+    description: 'Thank you for being an important part of our special day.',
+  },
+  thanks: {
+    title: 'Appreciate',
+    content:
+      "Thank you everyone for always accompanying Tuan and Ni in their growth process, and for being witnesses and supporting the love story of the young couple. This wedding will only be complete when receiving blessings and especially the presence of everyone on the bride and groom's wedding day.",
+  },
+  video: {
+    play: 'Play',
+    pause: 'Pause',
+    mute: 'Mute',
+    unmute: 'Unmute',
+    close: 'Close',
+  },
+  common: {
+    backToTop: 'Back to top',
+  },
 }

@@ -113,8 +113,44 @@ export const vi = {
     },
     event3: {
       title: 'Lễ Thành Hôn',
-      location: 'Nhà hàng tiệc cưới Minh Toàn Galaxy',
+      subLocation: 'Nhà hàng tiệc cưới',
+      location: 'Minh Toàn Galaxy',
       address: '306 Đường 2/9, Hải Châu, Đà Nẵng',
     },
+  },
+  intention: {
+    label1: 'Thân mời bạn tham gia bữa tiệc,',
+    label2: 'đánh dấu ngày chúng mình về chung một nhà!',
+  },
+  confirm: {
+    title: 'Xác nhận tham dự',
+    subTitle:
+      'Đám cưới sẽ trọn vẹn và ý nghĩa hơn khi có sự hiện diện và chúc phúc của bạn. Hãy xác nhận sự có mặt của mình để Tuấn & Ni chuẩn bị đón tiếp chu đáo nhất nha!',
+    name: 'Tên của bạn',
+    isAttend: 'Bạn sẽ tham dự chứ?',
+    yes: 'Có',
+    no: 'Không',
+    maybe: 'Có thể',
+    guestOf: 'Bạn là khách mời của ai?',
+    bride: 'Cô dâu',
+    groom: 'Chú rể',
+    wish: 'Lời chúc của bạn',
+    submit: 'Xác nhận',
+    description: 'Cảm ơn bạn vì đã trở thành một phần quan trọng trong ngày đặc biệt của tụi mình.',
+  },
+  thanks: {
+    title: 'Trân trọng',
+    content:
+      'Cảm ơn mọi người đã luôn đồng hành trong quá trình trưởng thành của Tuấn và Ni, cũng đã là những người chứng kiến và ủng hộ câu chuyện tình yêu của đôi bạn trẻ. Hôn lễ này sẽ chỉ trở nên trọn vẹn khi nhận được những lời chúc phúc và đặc biện là sự có mặt của mọi người trong ngày chung đôi của cô dâu và chú rể.',
+  },
+  video: {
+    play: 'Phát',
+    pause: 'Dừng',
+    mute: 'Tắt âm',
+    unmute: 'Bật âm',
+    close: 'Đóng',
+  },
+  common: {
+    backToTop: 'Cuộn đến đầu trang',
   },
 }

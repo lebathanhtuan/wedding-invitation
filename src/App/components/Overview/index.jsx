@@ -160,7 +160,9 @@ function Overview() {
               }
               onClick={() => setVideoPlay(!videoPlay)}
             >
-              <span className="btn-content">{videoPlay ? <span>Dừng</span> : <span>Phát</span>}</span>
+              <span className="btn-content">
+                {videoPlay ? <span>{t('video.pause')}</span> : <span>{t('video.play')}</span>}
+              </span>
             </S.VideoButton>
             <S.VideoButton
               type="primary"
@@ -175,7 +177,9 @@ function Overview() {
               }
               onClick={() => setVideoMute(!videoMute)}
             >
-              <span className="btn-content">{videoMute ? <span>Bật âm</span> : <span>Tắt âm</span>}</span>
+              <span className="btn-content">
+                {videoMute ? <span>{t('video.unmute')}</span> : <span>{t('video.mute')}</span>}
+              </span>
             </S.VideoButton>
             <S.VideoButton
               type="primary"
@@ -184,7 +188,7 @@ function Overview() {
               icon={<RxCross2 style={{ fontSize: 20, marginTop: 3 }} />}
               onClick={handleCloseVideoModal}
             >
-              <span className="btn-content">Đóng</span>
+              <span className="btn-content">{t('video.close')}</span>
             </S.VideoButton>
           </Space>
         </S.ModalAction>
@@ -204,7 +208,7 @@ function Overview() {
         </S.ModalContent>
       </S.VideoModal>
     )
-  }, [deviceHeight, deviceWidth, isResizeSP, isShowVideoModal, videoMute, videoPlay])
+  }, [deviceHeight, deviceWidth, isResizeSP, isShowVideoModal, t, videoMute, videoPlay])
 
   return (
     <S.OverviewWrapper id="overview" $background={overviewBackgroundImage}>

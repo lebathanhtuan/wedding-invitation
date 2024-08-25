@@ -1,7 +1,7 @@
 import { FloatButton } from 'antd'
+import { useTranslation } from 'react-i18next'
 
 import Header from 'src/layouts/Header'
-import Footer from 'src/layouts/Footer'
 
 import Overview from './components/Overview'
 import Invitation from './components/Invitation'
@@ -18,6 +18,8 @@ import Thanks from './components/Thanks'
 import * as S from './styled'
 
 function App() {
+  const { t } = useTranslation()
+
   return (
     <S.AppContainer>
       <Header />
@@ -34,8 +36,7 @@ function App() {
         <Confirm />
         <Thanks />
       </main>
-      <Footer />
-      <FloatButton.BackTop type="primary" tooltip={<div>Cuộn đến đầu trang</div>} />
+      <FloatButton.BackTop type="primary" tooltip={<div>{t('common.backToTop')}</div>} />
     </S.AppContainer>
   )
 }

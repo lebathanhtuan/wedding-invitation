@@ -1,6 +1,7 @@
 import { Row, Col, Flex, Form, Button, Input, Segmented } from 'antd'
 import { CheckOutlined, CloseOutlined, QuestionOutlined } from '@ant-design/icons'
 import { Map as PigeonMap, Marker } from 'pigeon-maps'
+import { useTranslation } from 'react-i18next'
 
 import T from 'src/components/Typography'
 import { RESTAURANT_COORDINATES } from 'src/constants/wedding'
@@ -12,6 +13,8 @@ import saveTheDateImage from 'src/assets/images/SaveTheDate.png'
 import * as S from './styled'
 
 function Confirm() {
+  const { t } = useTranslation()
+
   return (
     <S.ConfirmWrapper>
       <S.ConfirmContainer>
@@ -33,12 +36,9 @@ function Confirm() {
             <S.ConfirmRight>
               <Flex align="center" justify="center" vertical style={{ marginBottom: 16 }}>
                 <T.Title level={2} color="primary">
-                  Xác nhận tham dự
+                  {t('confirm.title')}
                 </T.Title>
-                <T.Text align="center">
-                  Đám cưới sẽ trọn vẹn và ý nghĩa hơn khi có sự hiện diện và chúc phúc của bạn. Hãy xác nhận sự có mặt
-                  của mình để Tuấn & Ni chuẩn bị đón tiếp chu đáo nhất nha!
-                </T.Text>
+                <T.Text align="center">{t('confirm.subTitle')}</T.Text>
               </Flex>
               <S.ConfirmForm>
                 <Form
@@ -46,11 +46,11 @@ function Confirm() {
                   layout="vertical"
                   initialValues={{
                     isAttend: 'yes',
-                    guestOf: 'Cô dâu',
+                    guestOf: 'bride',
                   }}
                 >
                   <Form.Item
-                    label="Tên của bạn"
+                    label={t('confirm.name')}
                     name="name"
                     rules={[
                       {
@@ -62,7 +62,7 @@ function Confirm() {
                     <Input />
                   </Form.Item>
                   <Form.Item
-                    label="Bạn sẽ tham dự chứ?"
+                    label={t('confirm.isAttend')}
                     name="isAttend"
                     rules={[
                       {
@@ -74,17 +74,17 @@ function Confirm() {
                     <Segmented
                       options={[
                         {
-                          label: 'Có',
+                          label: t('confirm.yes'),
                           value: 'yes',
                           icon: <CheckOutlined />,
                         },
                         {
-                          label: 'Không',
+                          label: t('confirm.no'),
                           value: 'no',
                           icon: <CloseOutlined />,
                         },
                         {
-                          label: 'Có thể',
+                          label: t('confirm.maybe'),
                           value: 'maybe',
                           icon: <QuestionOutlined />,
                         },
@@ -93,7 +93,7 @@ function Confirm() {
                     />
                   </Form.Item>
                   <Form.Item
-                    label="Bạn là khách mời của ai?"
+                    label={t('confirm.guestOf')}
                     name="guestOf"
                     rules={[
                       {
@@ -102,20 +102,30 @@ function Confirm() {
                       },
                     ]}
                   >
-                    <Segmented options={['Cô dâu', 'Chú rể']} size="large" />
+                    <Segmented
+                      options={[
+                        {
+                          label: t('confirm.bride'),
+                          value: 'bride',
+                        },
+                        {
+                          label: t('confirm.groom'),
+                          value: 'groom',
+                        },
+                      ]}
+                      size="large"
+                    />
                   </Form.Item>
-                  <Form.Item label="Lời chúc của bạn" name="wish">
+                  <Form.Item label={t('confirm.wish')} name="wish">
                     <Input.TextArea autoSize={{ minRows: 2, maxRows: 2 }} />
                   </Form.Item>
                   <Button type="primary" htmlType="submit">
-                    Xác nhận
+                    {t('confirm.submit')}
                   </Button>
                 </Form>
               </S.ConfirmForm>
               <Flex align="center" justify="center" vertical style={{ marginTop: 16 }}>
-                <T.Text align="center">
-                  Cảm ơn bạn vì đã trở thành một phần quan trọng trong ngày đặc biệt của tụi mình.
-                </T.Text>
+                <T.Text align="center">{t('confirm.description')}</T.Text>
               </Flex>
             </S.ConfirmRight>
           </Col>

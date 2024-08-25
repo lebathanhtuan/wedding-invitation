@@ -27,6 +27,11 @@ function Header() {
     }
   }
 
+  const handleChangeLanguage = (value) => {
+    i18n.changeLanguage(value)
+    localStorage.setItem('lang', value)
+  }
+
   const renderMenuItems = useMemo(() => {
     return MENU_ITEMS.map((item, index) => (
       <S.MenuItem key={index} href={item.href} onClick={handleClickMenuItem}>
@@ -65,7 +70,7 @@ function Header() {
             key="viSelect"
             variant="borderless"
             value={i18n.language}
-            onChange={(value) => i18n.changeLanguage(value)}
+            onChange={(value) => handleChangeLanguage(value)}
           >
             <Select.Option value="vi">
               🇻🇳 <span>Tiếng</span> {t('header.translate.vi')}
@@ -100,7 +105,7 @@ function Header() {
           {renderSidebarItems}
         </Flex>
         <img src={primarySaveTheDateImage} alt="" />
-        <T.Text align="center" style={{ marginTop: 16 }}>
+        <T.Text size="sm" align="center" font="shantellSans" style={{ marginTop: 16 }}>
           {t('header.sidebar.designBy')}
         </T.Text>
       </Drawer>
