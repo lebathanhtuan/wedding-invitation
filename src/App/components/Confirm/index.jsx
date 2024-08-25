@@ -1,10 +1,13 @@
-import { Row, Col, Flex, Form, Button, Input, Segmented } from 'antd'
+import { useState } from 'react'
+import { Row, Col, Flex, Form, Button, Input, Segmented, notification } from 'antd'
 import { CheckOutlined, CloseOutlined, QuestionOutlined } from '@ant-design/icons'
 import { Map as PigeonMap, Marker } from 'pigeon-maps'
 import { useTranslation } from 'react-i18next'
+import axios from 'axios'
 
 import T from 'src/components/Typography'
 import { RESTAURANT_COORDINATES } from 'src/constants/wedding'
+import { END_POINT } from 'src/constants/api'
 
 import restaurantLocationImage from 'src/assets/images/RestaurantLocation.png'
 import confirmBackgroundImage from 'src/assets/images/ConfirmBackground.jpg'
@@ -13,7 +16,41 @@ import saveTheDateImage from 'src/assets/images/SaveTheDate.png'
 import * as S from './styled'
 
 function Confirm() {
+  const [loading, setLoading] = useState(false)
+  const [confirmForm] = Form.useForm()
+
   const { t } = useTranslation()
+
+  const handleSubmit = async (values) => {
+    try {
+      setLoading(true)
+      await axios.post(END_POINT, {
+        name: values.name,
+        personFriend: values.guestOf,
+        isAttendees: values.isAttend,
+        weddingWish: values.wish,
+        attendeesNumber: 1,
+      })
+      setLoading(false)
+      confirmForm.setFieldsValue({
+        name: '',
+        isAttend: 'yes',
+        guestOf: 'bride',
+        wish: '',
+      })
+      notification.success({
+        message: 'Thành công',
+        description: 'Bạn đã xác nhận tham dự thành công!',
+      })
+    } catch (error) {
+      setLoading(false)
+      notification.error({
+        message: 'Thất bại',
+        description: 'Có lỗi xảy ra, vui lòng thử lại sau!',
+      })
+      console.error(error)
+    }
+  }
 
   return (
     <S.ConfirmWrapper>
@@ -42,12 +79,14 @@ function Confirm() {
               </Flex>
               <S.ConfirmForm>
                 <Form
+                  form={confirmForm}
                   name="confirmForm"
                   layout="vertical"
                   initialValues={{
                     isAttend: 'yes',
                     guestOf: 'bride',
                   }}
+                  onFinish={handleSubmit}
                 >
                   <Form.Item
                     label={t('confirm.name')}
@@ -119,7 +158,7 @@ function Confirm() {
                   <Form.Item label={t('confirm.wish')} name="wish">
                     <Input.TextArea autoSize={{ minRows: 2, maxRows: 2 }} />
                   </Form.Item>
-                  <Button type="primary" htmlType="submit">
+                  <Button type="primary" htmlType="submit" loading={loading}>
                     {t('confirm.submit')}
                   </Button>
                 </Form>
