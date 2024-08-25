@@ -153,4 +153,15 @@ export const vi = {
   common: {
     backToTop: 'Cuộn đến đầu trang',
   },
+  message: {
+    successTitle: 'Gửi thông tin thành công!',
+    successDescription: 'Cảm ơn bạn đã xác nhận tham dự đám cưới của chúng mình!',
+    errorTitle: 'Gửi thông tin thất bại!',
+    errorDescription: 'Có lỗi xảy ra, vui lòng thử lại sau!',
+    required: {
+      name: 'Bạn chưa nhập tên!',
+      isAttend: 'Bạn chưa chọn trạng thái tham dự!',
+      guestOf: 'Bạn chưa chọn khách mời của cô dâu hay chú rể!',
+    },
+  },
 }

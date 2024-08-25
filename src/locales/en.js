@@ -151,4 +151,15 @@ export const en = {
   common: {
     backToTop: 'Back to top',
   },
+  message: {
+    successTitle: 'Send information successfully!',
+    successDescription: 'Thank you for confirming your attendance at our wedding!',
+    errorTitle: 'Send information failed!',
+    errorDescription: 'An error occurred, please try again later!',
+    required: {
+      name: 'Please enter your name',
+      isAttend: 'Please choose your attendance status',
+      guestOf: 'Please choose who you are a guest of',
+    },
+  },
 }

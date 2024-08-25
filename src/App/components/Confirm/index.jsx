@@ -39,14 +39,14 @@ function Confirm() {
         wish: '',
       })
       notification.success({
-        message: 'Thành công',
-        description: 'Bạn đã xác nhận tham dự thành công!',
+        message: t('message.successTitle'),
+        description: t('message.successDescription'),
       })
     } catch (error) {
       setLoading(false)
       notification.error({
-        message: 'Thất bại',
-        description: 'Có lỗi xảy ra, vui lòng thử lại sau!',
+        message: t('message.errorTitle'),
+        description: t('message.errorDescription'),
       })
       console.error(error)
     }
@@ -94,7 +94,7 @@ function Confirm() {
                     rules={[
                       {
                         required: true,
-                        message: 'Bạn chưa nhập tên!',
+                        message: t('message.required.name'),
                       },
                     ]}
                   >
@@ -106,7 +106,7 @@ function Confirm() {
                     rules={[
                       {
                         required: true,
-                        message: 'Bạn chưa chọn trạng thái tham dự!',
+                        message: t('message.required.isAttend'),
                       },
                     ]}
                   >
@@ -137,7 +137,7 @@ function Confirm() {
                     rules={[
                       {
                         required: true,
-                        message: 'Bạn chưa chọn khách mời của cô dâu hay chú rể!',
+                        message: t('message.required.guestOf'),
                       },
                     ]}
                   >
