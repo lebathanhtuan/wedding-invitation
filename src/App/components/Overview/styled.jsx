@@ -306,6 +306,12 @@ export const PlayButton = styled.div`
       transform: scale(1);
     }
   }
+
+  @media screen and (max-width: 768px) {
+    & ${PlayNote} {
+      opacity: 1;
+    }
+  }
 `
 
 export const ModalContent = styled.div`
