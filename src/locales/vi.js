@@ -9,7 +9,7 @@ export const vi = {
       event: 'Sự kiện',
     },
     sidebar: {
-      designBy: 'Thiết kế bởi Chú Rễ',
+      designBy: 'Thiết kế bởi Chú Rể',
     },
     translate: {
       vi: 'Việt',
