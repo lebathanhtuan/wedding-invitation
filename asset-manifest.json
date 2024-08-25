@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wedding-invitation/static/css/main.4871281f.css",
-    "main.js": "/wedding-invitation/static/js/main.eb7b33d8.js",
+    "main.js": "/wedding-invitation/static/js/main.95f4ff36.js",
     "reactPlayerYouTube.js": "/wedding-invitation/static/js/reactPlayerYouTube.a5514583.chunk.js",
     "reactPlayerSoundCloud.js": "/wedding-invitation/static/js/reactPlayerSoundCloud.0479b4e4.chunk.js",
     "reactPlayerVimeo.js": "/wedding-invitation/static/js/reactPlayerVimeo.9e67bfd9.chunk.js",
@@ -61,7 +61,7 @@
     "static/media/RestaurantLocation.png": "/wedding-invitation/static/media/RestaurantLocation.9f815706b741bdef629d.png",
     "index.html": "/wedding-invitation/index.html",
     "main.4871281f.css.map": "/wedding-invitation/static/css/main.4871281f.css.map",
-    "main.eb7b33d8.js.map": "/wedding-invitation/static/js/main.eb7b33d8.js.map",
+    "main.95f4ff36.js.map": "/wedding-invitation/static/js/main.95f4ff36.js.map",
     "reactPlayerYouTube.a5514583.chunk.js.map": "/wedding-invitation/static/js/reactPlayerYouTube.a5514583.chunk.js.map",
     "reactPlayerSoundCloud.0479b4e4.chunk.js.map": "/wedding-invitation/static/js/reactPlayerSoundCloud.0479b4e4.chunk.js.map",
     "reactPlayerVimeo.9e67bfd9.chunk.js.map": "/wedding-invitation/static/js/reactPlayerVimeo.9e67bfd9.chunk.js.map",
@@ -80,6 +80,6 @@
   },
   "entrypoints": [
     "static/css/main.4871281f.css",
-    "static/js/main.eb7b33d8.js"
+    "static/js/main.95f4ff36.js"
   ]
 }
