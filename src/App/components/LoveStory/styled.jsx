@@ -6,6 +6,7 @@ export const LoveStoryWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 32px 0;
+  background-color: #fff9f2;
 `
 
 export const LoveStoryTitle = styled(Flex)`
