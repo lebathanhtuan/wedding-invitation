@@ -84,7 +84,7 @@ function Header() {
             key="enSelect"
             variant="borderless"
             value={i18n.language}
-            onChange={(value) => i18n.changeLanguage(value)}
+            onChange={(value) => handleChangeLanguage(value)}
           >
             <Select.Option value="vi">🇻🇳 {t('header.translate.vi')}</Select.Option>
             <Select.Option value="en">🇬🇧 {t('header.translate.en')}</Select.Option>
