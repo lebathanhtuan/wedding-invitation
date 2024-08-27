@@ -152,6 +152,7 @@ export const vi = {
   },
   common: {
     backToTop: 'Cuộn đến đầu trang',
+    tooltip: 'Hãy bật âm thanh',
   },
   message: {
     successTitle: 'Gửi thông tin thành công!',

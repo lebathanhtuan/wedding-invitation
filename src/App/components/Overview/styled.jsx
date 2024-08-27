@@ -334,6 +334,10 @@ export const ModalAction = styled.div`
   z-index: 3;
 `
 
+export const ButtonWrapper = styled.div`
+  position: relative;
+`
+
 export const VideoButton = styled(Button)`
   border-radius: 999px !important;
   gap: 0;
@@ -353,6 +357,31 @@ export const VideoButton = styled(Button)`
       overflow: hidden;
     }
   }
+`
+
+export const ButtonTooltip = styled.div`
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 4px 8px;
+  width: max-content;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 14px;
+`
+
+export const TootleArrow = styled.div`
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid rgba(0, 0, 0, 0.5);
 `
 
 export const VideoModal = styled(Modal)`

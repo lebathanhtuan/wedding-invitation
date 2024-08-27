@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useCallback } from 'react'
 import { Statistic, Space } from 'antd'
 import moment from 'moment'
 import ReactPlayer from 'react-player'
@@ -22,6 +22,7 @@ import moviePlayImage from 'src/assets/images/MoviePlay.png'
 import * as S from './styled'
 
 function Overview() {
+  const [isFirstPlayVideo, setIsFirstPlayVideo] = useState(true)
   const [isShowVideoModal, setIsShowVideoModal] = useState(true)
 
   const [videoPlay, setVideoPlay] = useState(true)
@@ -63,10 +64,13 @@ function Overview() {
     setCountdownTime({ days, hours, minutes, seconds })
   }
 
-  const handleCloseVideoModal = () => {
+  const handleCloseVideoModal = useCallback(() => {
     setIsShowVideoModal(false)
     setVideoMute(false)
-  }
+    if (isFirstPlayVideo) {
+      setIsFirstPlayVideo(false)
+    }
+  }, [isFirstPlayVideo])
 
   const renderDays = useMemo(
     () => (
@@ -164,23 +168,35 @@ function Overview() {
                 {videoPlay ? <span>{t('video.pause')}</span> : <span>{t('video.play')}</span>}
               </span>
             </S.VideoButton>
-            <S.VideoButton
-              type="primary"
-              size="large"
-              shape="circle"
-              icon={
-                videoMute ? (
-                  <RxSpeakerLoud style={{ fontSize: 20, marginTop: 3 }} />
-                ) : (
-                  <RxSpeakerOff style={{ fontSize: 20, marginTop: 3 }} />
-                )
-              }
-              onClick={() => setVideoMute(!videoMute)}
-            >
-              <span className="btn-content">
-                {videoMute ? <span>{t('video.unmute')}</span> : <span>{t('video.mute')}</span>}
-              </span>
-            </S.VideoButton>
+            <S.ButtonWrapper>
+              <S.VideoButton
+                type="primary"
+                size="large"
+                shape="circle"
+                icon={
+                  videoMute ? (
+                    <RxSpeakerLoud style={{ fontSize: 20, marginTop: 3 }} />
+                  ) : (
+                    <RxSpeakerOff style={{ fontSize: 20, marginTop: 3 }} />
+                  )
+                }
+                onClick={() => {
+                  setVideoMute(!videoMute)
+                  if (isFirstPlayVideo) {
+                    setIsFirstPlayVideo(false)
+                  }
+                }}
+              >
+                <span className="btn-content">
+                  {videoMute ? <span>{t('video.unmute')}</span> : <span>{t('video.mute')}</span>}
+                </span>
+              </S.VideoButton>
+              {isFirstPlayVideo && (
+                <S.ButtonTooltip>
+                  {t('common.tooltip')} <S.TootleArrow />
+                </S.ButtonTooltip>
+              )}
+            </S.ButtonWrapper>
             <S.VideoButton
               type="primary"
               size="large"
@@ -208,7 +224,17 @@ function Overview() {
         </S.ModalContent>
       </S.VideoModal>
     )
-  }, [deviceHeight, deviceWidth, isResizeSP, isShowVideoModal, t, videoMute, videoPlay])
+  }, [
+    deviceHeight,
+    deviceWidth,
+    handleCloseVideoModal,
+    isFirstPlayVideo,
+    isResizeSP,
+    isShowVideoModal,
+    t,
+    videoMute,
+    videoPlay,
+  ])
 
   return (
     <S.OverviewWrapper id="overview" $background={overviewBackgroundImage}>

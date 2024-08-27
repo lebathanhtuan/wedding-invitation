@@ -150,6 +150,7 @@ export const en = {
   },
   common: {
     backToTop: 'Back to top',
+    tooltip: 'Turn on the sound',
   },
   message: {
     successTitle: 'Send information successfully!',

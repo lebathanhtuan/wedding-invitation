@@ -5,5 +5,5 @@ export const RESTAURANT_COORDINATES = {
 }
 
 export const ENGAGEMENT_VIDEO = 'https://www.youtube.com/watch?v=kalKWUHbLkc'
-export const INVITATION_VIDEO_PC = 'https://www.youtube.com/watch?v=hmE406jELA4'
-export const INVITATION_VIDEO_SP = 'https://www.youtube.com/watch?v=iv0o7SkBRj4'
+export const INVITATION_VIDEO_PC = 'https://www.youtube.com/watch?v=sl3-z16Qgoo'
+export const INVITATION_VIDEO_SP = 'https://www.youtube.com/watch?v=_t4Jkjc0W6M'
